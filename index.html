@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WorkPilot - Find Jobs & Earn Online</title>
+<meta name="description" content="WorkPilot is an online freelancing and remote jobs platform. Discover opportunities, build skills and grow your career.">
+<meta name="keywords" content="WorkPilot, online jobs, freelancing, remote work, online earning">
+<meta name="author" content="WorkPilot">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --bg:#0b1120;
+  --card:#131d30;
+  --card2:#18243a;
+  --text:#f4f7ff;
+  --muted:#9aa9c2;
+  --accent:#55e6bd;
+  --blue:#638cff;
+  --border:rgba(255,255,255,.09);
+}
+
+* {margin:0;padding:0;box-sizing:border-box}
+
+html {scroll-behavior:smooth}
+
+body {
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a {text-decoration:none;color:inherit}
+button,input,select {font:inherit}
+button {cursor:pointer}
+
+.container {
+  width:min(1150px,92%);
+  margin:auto;
+}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(11,17,32,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo {
+  font:700 27px "Space Grotesk",sans-serif;
+  letter-spacing:-1px;
+}
+
+.logo span {color:var(--accent)}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:27px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.nav-links a:hover {color:var(--accent)}
+
+.nav-actions {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.btn {
+  border:0;
+  padding:12px 19px;
+  border-radius:9px;
+  font-weight:700;
+  transition:.2s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.btn:hover {transform:translateY(-2px)}
+
+.primary {
+  background:var(--accent);
+  color:#071b18;
+}
+
+.secondary {
+  background:transparent;
+  border:1px solid var(--border);
+  color:white;
+}
+
+.menu-btn {
+  display:none;
+  color:white;
+  background:none;
+  border:0;
+  font-size:23px;
+}
+
+.hero {
+  padding:105px 0 85px;
+  background:
+    radial-gradient(ellipse at 80% 20%,rgba(85,230,189,.12),transparent 40%),
+    radial-gradient(ellipse at 15% 70%,rgba(99,140,255,.13),transparent 35%);
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  align-items:center;
+  gap:55px;
+}
+
+.tag {
+  display:inline-block;
+  color:var(--accent);
+  border:1px solid rgba(85,230,189,.25);
+  background:rgba(85,230,189,.07);
+  padding:8px 14px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:22px;
+}
+
+.hero h1 {
+  font:700 clamp(40px,6vw,68px)/1.12 "Space Grotesk",sans-serif;
+  letter-spacing:-2.5px;
+  margin-bottom:22px;
+}
+
+.hero h1 span {color:var(--accent)}
+
+.hero p {
+  color:var(--muted);
+  max-width:590px;
+  font-size:16px;
+  margin-bottom:28px;
+}
+
+.hero-buttons {
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+}
+
+.hero-card {
+  background:linear-gradient(145deg,#192943,#111c30);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 25px 80px rgba(0,0,0,.3);
+}
+
+.hero-card h3 {
+  font:600 22px "Space Grotesk";
+  margin-bottom:20px;
+}
+
+.mini-job {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:15px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.mini-job:last-child {border:0}
+
+.job-icon {
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  background:rgba(85,230,189,.1);
+  color:var(--accent);
+  border-radius:12px;
+  flex-shrink:0;
+}
+
+.mini-job strong {display:block;font-size:14px}
+.mini-job small {color:var(--muted)}
+
+.price {
+  margin-left:auto;
+  color:var(--accent);
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:50px;
+}
+
+.stat {
+  background:rgba(255,255,255,.035);
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:20px;
+}
+
+.stat h2 {
+  font:700 28px "Space Grotesk";
+  color:var(--accent);
+}
+
+.stat p {font-size:12px;color:var(--muted)}
+
+section {padding:85px 0}
+
+.section-head {
+  text-align:center;
+  margin-bottom:42px;
+}
+
+.section-head h2 {
+  font:700 clamp(29px,4vw,42px) "Space Grotesk";
+  margin-bottom:12px;
+}
+
+.section-head p {color:var(--muted)}
+
+.categories {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.category {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:26px 20px;
+  transition:.25s;
+}
+
+.category:hover {
+  transform:translateY(-5px);
+  border-color:var(--accent);
+}
+
+.category i {
+  font-size:25px;
+  color:var(--accent);
+  margin-bottom:18px;
+}
+
+.category h3 {font-size:16px;margin-bottom:6px}
+.category p {font-size:12px;color:var(--muted)}
+
+.jobs-section {background:#0e1728}
+
+.job-controls {
+  display:flex;
+  gap:12px;
+  margin-bottom:28px;
+  flex-wrap:wrap;
+}
+
+.job-controls input,.job-controls select {
+  background:var(--card);
+  border:1px solid var(--border);
+  color:white;
+  padding:13px;
+  border-radius:9px;
+  outline:none;
+  flex:1;
+  min-width:180px;
+}
+
+.job-controls select option {background:var(--card)}
+
+.job-list {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:17px;
+}
+
+.job-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:23px;
+  border-radius:15px;
+  transition:.2s;
+}
+
+.job-card:hover {border-color:var(--accent)}
+
+.job-top {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  margin-bottom:15px;
+}
+
+.company-icon {
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:var(--card2);
+  color:var(--accent);
+  font-size:20px;
+}
+
+.job-top h3 {font-size:16px}
+.job-top small {color:var(--muted)}
+
+.job-card p {
+  color:var(--muted);
+  font-size:13px;
+  margin:13px 0;
+}
+
+.job-tags {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:14px 0;
+}
+
+.job-tags span {
+  font-size:11px;
+  color:var(--accent);
+  background:rgba(85,230,189,.08);
+  padding:6px 10px;
+  border-radius:6px;
+}
+
+.job-bottom {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  border-top:1px solid var(--border);
+  padding-top:15px;
+}
+
+.job-bottom strong {color:var(--accent);font-size:15px}
+.job-bottom button {padding:9px 13px;font-size:12px}
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.step {
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:15px;
+}
+
+.step-number {
+  font:700 32px "Space Grotesk";
+  color:var(--accent);
+  margin-bottom:15px;
+}
+
+.step h3 {margin-bottom:10px}
+.step p {color:var(--muted);font-size:13px}
+
+.pricing {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.plan {
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:28px;
+  border-radius:16px;
+}
+
+.plan.featured {border-color:var(--accent)}
+
+.plan h3 {font-size:19px}
+.plan .amount {
+  font:700 34px "Space Grotesk";
+  margin:18px 0;
+}
+
+.plan p {color:var(--muted);font-size:13px}
+
+.plan ul {
+  list-style:none;
+  margin:22px 0;
+}
+
+.plan li {
+  padding:8px 0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.plan li i {color:var(--accent);margin-right:8px}
+
+.plan .btn {width:100%}
+
+.cta {
+  background:linear-gradient(120deg,#143b3b,#192d53);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:55px 25px;
+  text-align:center;
+}
+
+.cta h2 {
+  font:700 36px "Space Grotesk";
+  margin-bottom:12px;
+}
+
+.cta p {color:#c0d0df;margin-bottom:25px}
+
+footer {
+  border-top:1px solid var(--border);
+  padding:35px 0;
+}
+
+.footer-content {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-content p {color:var(--muted);font-size:12px}
+
+.socials {display:flex;gap:16px;color:var(--muted)}
+.socials a:hover {color:var(--accent)}
+
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:500;
+  background:rgba(0,0,0,.75);
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+.modal.show {display:flex}
+
+.modal-box {
+  background:#152239;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:28px;
+  width:min(430px,100%);
+  position:relative;
+}
+
+.modal-box h2 {margin-bottom:8px}
+.modal-box p {color:var(--muted);font-size:13px;margin-bottom:20px}
+
+.modal-box input,.modal-box select {
+  display:block;
+  width:100%;
+  padding:13px;
+  margin-bottom:13px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:#0c1629;
+  color:white;
+  outline:none;
+}
+
+.modal-box .btn {width:100%}
+
+.close {
+  position:absolute;
+  right:18px;
+  top:15px;
+  border:0;
+  background:none;
+  color:white;
+  font-size:23px;
+}
+
+.toast {
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:var(--accent);
+  color:#071b18;
+  padding:13px 20px;
+  border-radius:9px;
+  font-weight:700;
+  display:none;
+  z-index:600;
+}
+
+.toast.show {display:block}
+
+.empty {
+  grid-column:1/-1;
+  color:var(--muted);
+  text-align:center;
+  padding:30px;
+}
+
+@media(max-width:850px) {
+  .hero-grid {grid-template-columns:1fr}
+  .categories {grid-template-columns:repeat(2,1fr)}
+  .stats {grid-template-columns:repeat(2,1fr)}
+  .job-list {grid-template-columns:1fr}
+  .pricing {grid-template-columns:1fr}
+}
+
+@media(max-width:650px) {
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    width:100%;
+    background:#101b2d;
+    padding:22px;
+    flex-direction:column;
+    align-items:flex-start;
+    border-bottom:1px solid var(--border);
+  }
+
+  .nav-links.open {display:flex}
+  .menu-btn {display:block}
+  .nav-actions .secondary {display:none}
+  .hero {padding:75px 0 55px}
+  section {padding:65px 0}
+  .steps {grid-template-columns:1fr}
+  .categories {gap:10px}
+  .category {padding:19px 14px}
+  .hero h1 {letter-spacing:-1.5px}
+  .cta h2 {font-size:28px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="#" class="logo">Work<span>Pilot.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#jobs">Find Jobs</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Plans</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn secondary" onclick="openModal('login')">Login</button>
+      <button class="btn primary" onclick="openModal('signup')">Join Now</button>
+      <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- HERO -->
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+
+    <div class="hero-grid">
+
+      <div>
+        <span class="tag">
+          <i class="fa-solid fa-circle-check"></i>
+          YOUR CAREER STARTS HERE
+        </span>
+
+        <h1>Find Work.<br>Build Skills.<br><span>Grow Online.</span></h1>
+
+        <p>
+          Discover remote jobs, freelancing opportunities and digital
+          projects. WorkPilot helps you explore new opportunities
+          and build your professional future.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#jobs" class="btn primary">
+            Explore Jobs <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <button class="btn secondary" onclick="openModal('signup')">
+            Create Account
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3><i class="fa-solid fa-briefcase" style="color:var(--accent)"></i>
+          Featured Opportunities</h3>
+
+        <div class="mini-job">
+          <div class="job-icon"><i class="fa-solid fa-code"></i></div>
+          <div><strong>Web Developer</strong><small>Remote Project</small></div>
+          <div class="price">$300</div>
+        </div>
+
+        <div class="mini-job">
+          <div class="job-icon"><i class="fa-solid fa-pen"></i></div>
+          <div><strong>Content Writer</strong><small>Freelance Work</small></div>
+          <div class="price">$120</div>
+        </div>
+
+        <div class="mini-job">
+          <div class="job-icon"><i class="fa-solid fa-palette"></i></div>
+          <div><strong>Graphic Designer</strong><small>Remote Project</small></div>
+          <div class="price">$200</div>
+        </div>
+
+        <div class="mini-job">
+          <div class="job-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div><strong>SEO Specialist</strong><small>Part Time</small></div>
+          <div class="price">$150</div>
+        </div>
+
+        <small style="color:var(--muted)">
+          Illustrative sample opportunities — not verified live vacancies.
+        </small>
+      </div>
+
+    </div>
+
+    <div class="stats">
+      <div class="stat"><h2>10+</h2><p>Job Categories</p></div>
+      <div class="stat"><h2>24/7</h2><p>Explore Opportunities</p></div>
+      <div class="stat"><h2>100%</h2><p>Responsive Design</p></div>
+      <div class="stat"><h2>Global</h2><p>Remote Work Focus</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Explore Job Categories</h2>
+      <p>Find opportunities that match your skills and interests.</p>
+    </div>
+
+    <div class="categories">
+
+      <div class="category">
+        <i class="fa-solid fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Websites, applications and programming.</p>
+      </div>
+
+      <div class="category">
+        <i class="fa-solid fa-pen-nib"></i>
+        <h3>Content Writing</h3>
+        <p>Articles, blogs and copywriting projects.</p>
+      </div>
+
+      <div class="category">
+        <i class="fa-solid fa-palette"></i>
+        <h3>Graphic Design</h3>
+        <p>Logos, branding and creative design.</p>
+      </div>
+
+      <div class="category">
+        <i class="fa-solid fa-bullhorn"></i>
+        <h3>Digital Marketing</h3>
+        <p>Social media and online promotion.</p>
+      </div>
+
+      <div class="category">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+        <h3>SEO Services</h3>
+        <p>Search optimization and website growth.</p>
+      </div>
+
+      <div class="category">
+        <i class="fa-solid fa-robot"></i>
+        <h3>AI Services</h3>
+        <p>AI tools, automation and AI projects.</p>
+      </div>
+
+      <div class="category">
+        <i class="fa-solid fa-video"></i>
+        <h3>Video Editing</h3>
+        <p>Video production and editing services.</p>
+      </div>
+
+      <div class="category">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h3>App Development</h3>
+        <p>Android and mobile application projects.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- JOBS -->
+
+<section class="jobs-section" id="jobs">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Find Your Next Opportunity</h2>
+      <p>Search through example jobs and explore different careers.</p>
+    </div>
+
+    <div class="job-controls">
+      <input type="search" id="searchInput"
+        placeholder="Search jobs or skills..." oninput="renderJobs()">
+
+      <select id="categoryFilter" onchange="renderJobs()">
+        <option value="">All Categories</option>
+        <option>Development</option>
+        <option>Design</option>
+        <option>Writing</option>
+        <option>Marketing</option>
+        <option>AI</option>
+      </select>
+
+      <select id="typeFilter" onchange="renderJobs()">
+        <option value="">All Job Types</option>
+        <option>Remote</option>
+        <option>Freelance</option>
+        <option>Part Time</option>
+      </select>
+    </div>
+
+    <div class="job-list" id="jobList"></div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section id="how">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>How WorkPilot Works</h2>
+      <p>Start exploring opportunities in three simple steps.</p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Create Your Account</h3>
+        <p>Build your profile and introduce your professional skills.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Find Opportunities</h3>
+        <p>Search jobs that match your experience and interests.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Apply & Grow</h3>
+        <p>Submit applications and connect with potential clients.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+
+<section id="pricing" style="background:#0e1728">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Membership Plans</h2>
+      <p>Choose a plan for your professional journey.</p>
+    </div>
+
+    <div class="pricing">
+
+      <div class="plan">
+        <h3>Free Starter</h3>
+        <div class="amount">$0</div>
+        <p>For beginners exploring online work.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Basic profile</li>
+          <li><i class="fa-solid fa-check"></i> Browse job listings</li>
+          <li><i class="fa-solid fa-check"></i> Basic support</li>
+        </ul>
+        <button class="btn secondary" onclick="openModal('signup')">
+          Get Started
+        </button>
+      </div>
+
+      <div class="plan featured">
+        <h3>Professional</h3>
+        <div class="amount">$9<small style="font-size:13px;color:var(--muted)"> / month</small></div>
+        <p>For freelancers building their careers.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Enhanced profile</li>
+          <li><i class="fa-solid fa-check"></i> Advanced job filters</li>
+          <li><i class="fa-solid fa-check"></i> Priority support</li>
+        </ul>
+        <button class="btn primary" onclick="showToast('Demo plan: payment is not connected.')">
+          Choose Plan
+        </button>
+      </div>
+
+      <div class="plan">
+        <h3>Business</h3>
+        <div class="amount">$19<small style="font-size:13px;color:var(--muted)"> / month</small></div>
+        <p>For teams and growing businesses.</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Business profile</li>
+          <li><i class="fa-solid fa-check"></i> Post job opportunities</li>
+          <li><i class="fa-solid fa-check"></i> Business support</li>
+        </ul>
+        <button class="btn secondary" onclick="showToast('Demo plan: payment is not connected.')">
+          Choose Plan
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+
+<section id="contact">
+  <div class="container">
+    <div class="cta">
+      <h2>Ready to Start Your Journey?</h2>
+      <p>Create your profile and explore new professional opportunities.</p>
+      <button class="btn primary" onclick="openModal('signup')">
+        Join WorkPilot Today <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container footer-content">
+    <div>
+      <a href="#" class="logo">Work<span>Pilot.</span></a>
+      <p>Find opportunities. Build your future.</p>
+    </div>
+
+    <div class="socials">
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+
+    <p>© <span id="year"></span> WorkPilot. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- LOGIN / SIGNUP MODAL -->
+
+<div class="modal" id="authModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">&times;</button>
+
+    <h2 id="modalTitle">Create Account</h2>
+    <p id="modalDescription">Join WorkPilot and explore opportunities.</p>
+
+    <form id="authForm">
+      <input type="text" id="fullName" placeholder="Your Full Name">
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="password" id="password" placeholder="Password" required minlength="6">
+
+      <button class="btn primary" type="submit" id="authSubmit">
+        Create Account
+      </button>
+    </form>
+
+    <p style="margin-top:17px;text-align:center">
+      <span id="switchText">Already have an account?</span>
+      <a href="javascript:void(0)" onclick="switchMode()" style="color:var(--accent)">
+        <span id="switchLink">Login</span>
+      </a>
+    </p>
+
+    <small style="color:var(--muted)">
+      Demo interface only. Secure account registration requires a backend.
+    </small>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+const jobs = [
+  {
+    title:"Frontend Web Developer",
+    company:"Digital Studio",
+    category:"Development",
+    type:"Remote",
+    salary:"$300 - $500",
+    icon:"fa-code",
+    description:"Build responsive websites using HTML, CSS and JavaScript.",
+    tags:["HTML","CSS","JavaScript"]
+  },
+  {
+    title:"Graphic Designer",
+    company:"Creative Agency",
+    category:"Design",
+    type:"Freelance",
+    salary:"$150 - $250",
+    icon:"fa-palette",
+    description:"Create modern logos, banners and social media designs.",
+    tags:["Photoshop","Figma","Branding"]
+  },
+  {
+    title:"SEO Specialist",
+    company:"Growth Media",
+    category:"Marketing",
+    type:"Part Time",
+    salary:"$200 - $350",
+    icon:"fa-chart-line",
+    description:"Improve search engine visibility and website performance.",
+    tags:["SEO","Analytics","Research"]
+  },
+  {
+    title:"Content Writer",
+    company:"Media House",
+    category:"Writing",
+    type:"Remote",
+    salary:"$100 - $200",
+    icon:"fa-pen-nib",
+    description:"Write informative articles, website content and blogs.",
+    tags:["Writing","Blogs","Research"]
+  },
+  {
+    title:"AI Automation Developer",
+    company:"Future Labs",
+    category:"AI",
+    type:"Freelance",
+    salary:"$400 - $700",
+    icon:"fa-robot",
+    description:"Create automation workflows and AI-powered solutions.",
+    tags:["AI","Automation","APIs"]
+  },
+  {
+    title:"Mobile App Developer",
+    company:"AppWorks",
+    category:"Development",
+    type:"Remote",
+    salary:"$500 - $800",
+    icon:"fa-mobile-screen",
+    description:"Develop user-friendly mobile applications.",
+    tags:["Flutter","Android","Mobile"]
+  }
+];
+
+let isLogin = false;
+
+function renderJobs() {
+  const search = document.getElementById("searchInput")
+    .value.toLowerCase();
+
+  const category = document.getElementById("categoryFilter").value;
+  const type = document.getElementById("typeFilter").value;
+
+  const filtered = jobs.filter(job => {
+    const matchesSearch =
+      (job.title + " " + job.company + " " +
+      job.description + " " + job.tags.join(" "))
+      .toLowerCase().includes(search);
+
+    const matchesCategory = !category || job.category === category;
+    const matchesType = !type || job.type === type;
+
+    return matchesSearch && matchesCategory && matchesType;
+  });
+
+  const list = document.getElementById("jobList");
+
+  if (!filtered.length) {
+    list.innerHTML = '<div class="empty">No matching jobs found. Try another search.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(job => `
+    <article class="job-card">
+      <div class="job-top">
+        <div class="company-icon">
+          <i class="fa-solid ${job.icon}"></i>
+        </div>
+        <div>
+          <h3>${job.title}</h3>
+          <small>${job.company}</small>
+        </div>
+      </div>
+
+      <p>${job.description}</p>
+
+      <div class="job-tags">
+        ${job.tags.map(tag => `<span>${tag}</span>`).join("")}
+        <span>${job.type}</span>
+      </div>
+
+      <div class="job-bottom">
+        <strong>${job.salary}</strong>
+        <button class="btn primary"
+          onclick="applyJob('${job.title.replace(/'/g,"\\'")}')">
+          Apply Now
+        </button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function applyJob(title) {
+  showToast("Please login to apply for: " + title);
+  openModal("login");
+}
+
+function openModal(mode) {
+  isLogin = mode === "login";
+
+  document.getElementById("authModal").classList.add("show");
+  document.getElementById("modalTitle").textContent =
+    isLogin ? "Welcome Back" : "Create Account";
+
+  document.getElementById("modalDescription").textContent =
+    isLogin ? "Login to your WorkPilot account." :
+    "Join WorkPilot and explore opportunities.";
+
+  document.getElementById("fullName").style.display =
+    isLogin ? "none" : "block";
+
+  document.getElementById("fullName").required = !isLogin;
+
+  document.getElementById("authSubmit").textContent =
+    isLogin ? "Login" : "Create Account";
+
+  document.getElementById("switchText").textContent =
+    isLogin ? "Don't have an account?" : "Already have an account?";
+
+  document.getElementById("switchLink").textContent =
+    isLogin ? "Sign Up" : "Login";
+}
+
+function closeModal() {
+  document.getElementById("authModal").classList.remove("show");
+}
+
+function switchMode() {
+  openModal(isLogin ? "signup" : "login");
+}
+
+document.getElementById("authForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const name = document.getElementById("fullName").value;
+
+  if (isLogin) {
+    showToast("Demo only: connect a backend for real login.");
+  } else {
+    showToast("Demo only: connect a backend to register " + name + ".");
+  }
+
+  this.reset();
+  closeModal();
+});
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}
+
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("open");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navLinks").classList.remove("open");
+  });
+});
+
+document.getElementById("authModal").addEventListener("click", function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderJobs();
+
+</script>
+
+</body>
+</html>
