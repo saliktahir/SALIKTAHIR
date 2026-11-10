@@ -569,7 +569,7 @@ footer {
 <header>
   <div class="container nav">
 
-    <a href="#" class="logo">Work<span>Pilot.</span></a>
+    <a href="#" class="logo">salik<span>web.</span></a>
 
     <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
