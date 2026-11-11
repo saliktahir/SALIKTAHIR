@@ -3,28 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Salikweb | Find Jobs & Earn Online</title>
-
 <meta name="description" content="Salikweb - Discover online jobs, freelancing opportunities, remote work and digital skills.">
 <meta name="keywords" content="Salikweb, Online Jobs, Freelancing, Remote Work, Web Development">
 <meta name="author" content="Salik Tahir">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root {
 --bg:#0b1120;
---card:#131d30;
---card2:#18243a;
+--card:rgba(19,29,48,.92);
+--card2:rgba(24,36,58,.92);
 --text:#f4f7ff;
---muted:#9aa9c2;
+--muted:#b1bfd4;
 --accent:#55e6bd;
 --blue:#638cff;
---border:rgba(255,255,255,.09);
+--border:rgba(255,255,255,.12);
 }
 
 * {
@@ -33,15 +30,27 @@ padding:0;
 box-sizing:border-box;
 }
 
-html {
-scroll-behavior:smooth;
-}
+html { scroll-behavior:smooth; }
 
 body {
 font-family:Inter,sans-serif;
-background:var(--bg);
+background:#0b1120;
 color:var(--text);
 line-height:1.6;
+isolation:isolate;
+position:relative;
+}
+
+/* FULL WEBSITE BACKGROUND IMAGE */
+body::before {
+content:"";
+position:fixed;
+inset:0;
+z-index:-1;
+background:
+linear-gradient(rgba(11,17,32,.84),rgba(11,17,32,.89)),
+url("ScriptBaker.png") center center / cover no-repeat;
+pointer-events:none;
 }
 
 a {
@@ -49,9 +58,7 @@ text-decoration:none;
 color:inherit;
 }
 
-button,input,select {
-font:inherit;
-}
+button,input,select { font:inherit; }
 
 .container {
 width:min(1150px,92%);
@@ -62,7 +69,7 @@ header {
 position:sticky;
 top:0;
 z-index:100;
-background:rgba(11,17,32,.96);
+background:rgba(11,17,32,.88);
 backdrop-filter:blur(18px);
 border-bottom:1px solid var(--border);
 }
@@ -80,9 +87,7 @@ font:700 27px "Space Grotesk",sans-serif;
 letter-spacing:-1px;
 }
 
-.logo span {
-color:var(--accent);
-}
+.logo span { color:var(--accent); }
 
 .nav-links {
 display:flex;
@@ -92,9 +97,7 @@ color:var(--muted);
 font-size:14px;
 }
 
-.nav-links a:hover {
-color:var(--accent);
-}
+.nav-links a:hover { color:var(--accent); }
 
 .menu-btn {
 display:none;
@@ -118,9 +121,7 @@ cursor:pointer;
 transition:.2s;
 }
 
-.btn:hover {
-transform:translateY(-3px);
-}
+.btn:hover { transform:translateY(-3px); }
 
 .primary {
 background:var(--accent);
@@ -128,7 +129,7 @@ color:#071b18;
 }
 
 .secondary {
-background:transparent;
+background:rgba(11,17,32,.4);
 border:1px solid var(--border);
 color:white;
 }
@@ -136,8 +137,8 @@ color:white;
 .hero {
 padding:105px 0 85px;
 background:
-radial-gradient(ellipse at 80% 20%,rgba(85,230,189,.12),transparent 40%),
-radial-gradient(ellipse at 15% 70%,rgba(99,140,255,.13),transparent 35%);
+radial-gradient(ellipse at 80% 20%,rgba(85,230,189,.10),transparent 40%),
+radial-gradient(ellipse at 15% 70%,rgba(99,140,255,.10),transparent 35%);
 }
 
 .hero-grid {
@@ -151,7 +152,7 @@ gap:55px;
 display:inline-block;
 color:var(--accent);
 border:1px solid rgba(85,230,189,.25);
-background:rgba(85,230,189,.07);
+background:rgba(85,230,189,.09);
 padding:8px 14px;
 border-radius:30px;
 font-size:12px;
@@ -165,9 +166,7 @@ letter-spacing:-2px;
 margin-bottom:22px;
 }
 
-.hero h1 span {
-color:var(--accent);
-}
+.hero h1 span { color:var(--accent); }
 
 .hero p {
 color:var(--muted);
@@ -183,7 +182,8 @@ flex-wrap:wrap;
 }
 
 .hero-card {
-background:linear-gradient(145deg,#192943,#111c30);
+background:rgba(19,29,48,.91);
+backdrop-filter:blur(12px);
 border:1px solid var(--border);
 border-radius:22px;
 padding:28px;
@@ -203,9 +203,7 @@ padding:15px 0;
 border-bottom:1px solid var(--border);
 }
 
-.mini-job:last-child {
-border:0;
-}
+.mini-job:last-child { border:0; }
 
 .job-icon {
 width:45px;
@@ -223,9 +221,7 @@ display:block;
 font-size:14px;
 }
 
-.mini-job small {
-color:var(--muted);
-}
+.mini-job small { color:var(--muted); }
 
 .price {
 margin-left:auto;
@@ -242,7 +238,7 @@ margin-top:50px;
 }
 
 .stat {
-background:rgba(255,255,255,.035);
+background:rgba(19,29,48,.82);
 border:1px solid var(--border);
 border-radius:13px;
 padding:20px;
@@ -258,9 +254,7 @@ font-size:12px;
 color:var(--muted);
 }
 
-section {
-padding:85px 0;
-}
+section { padding:85px 0; }
 
 .section-head {
 text-align:center;
@@ -272,9 +266,7 @@ font:700 clamp(29px,4vw,42px) "Space Grotesk";
 margin-bottom:12px;
 }
 
-.section-head p {
-color:var(--muted);
-}
+.section-head p { color:var(--muted); }
 
 .categories {
 display:grid;
@@ -283,7 +275,8 @@ gap:18px;
 }
 
 .category {
-background:var(--card);
+background:rgba(19,29,48,.88);
+backdrop-filter:blur(8px);
 border:1px solid var(--border);
 border-radius:15px;
 padding:26px 20px;
@@ -312,7 +305,7 @@ color:var(--muted);
 }
 
 .jobs-section {
-background:#0e1728;
+background:rgba(14,23,40,.55);
 }
 
 .job-controls {
@@ -324,7 +317,7 @@ flex-wrap:wrap;
 
 .job-controls input,
 .job-controls select {
-background:var(--card);
+background:rgba(19,29,48,.95);
 border:1px solid var(--border);
 color:white;
 padding:13px;
@@ -334,9 +327,7 @@ flex:1;
 min-width:180px;
 }
 
-.job-controls select option {
-background:var(--card);
-}
+.job-controls select option { background:var(--card); }
 
 .job-list {
 display:grid;
@@ -345,16 +336,15 @@ gap:17px;
 }
 
 .job-card {
-background:var(--card);
+background:rgba(19,29,48,.94);
+backdrop-filter:blur(10px);
 border:1px solid var(--border);
 padding:23px;
 border-radius:15px;
 transition:.2s;
 }
 
-.job-card:hover {
-border-color:var(--accent);
-}
+.job-card:hover { border-color:var(--accent); }
 
 .job-top {
 display:flex;
@@ -374,13 +364,9 @@ color:var(--accent);
 font-size:20px;
 }
 
-.job-top h3 {
-font-size:16px;
-}
+.job-top h3 { font-size:16px; }
 
-.job-top small {
-color:var(--muted);
-}
+.job-top small { color:var(--muted); }
 
 .job-card p {
 color:var(--muted);
@@ -429,7 +415,7 @@ gap:20px;
 }
 
 .step {
-background:var(--card);
+background:rgba(19,29,48,.90);
 border:1px solid var(--border);
 padding:30px;
 border-radius:15px;
@@ -441,9 +427,7 @@ color:var(--accent);
 margin-bottom:15px;
 }
 
-.step h3 {
-margin-bottom:10px;
-}
+.step h3 { margin-bottom:10px; }
 
 .step p {
 color:var(--muted);
@@ -451,7 +435,7 @@ font-size:13px;
 }
 
 .cta {
-background:linear-gradient(120deg,#143b3b,#192d53);
+background:linear-gradient(120deg,rgba(20,59,59,.94),rgba(25,45,83,.94));
 border:1px solid var(--border);
 border-radius:22px;
 padding:55px 25px;
@@ -469,6 +453,7 @@ margin-bottom:25px;
 }
 
 footer {
+background:rgba(11,17,32,.65);
 border-top:1px solid var(--border);
 padding:35px 0;
 }
@@ -492,9 +477,7 @@ gap:16px;
 color:var(--muted);
 }
 
-.socials a:hover {
-color:var(--accent);
-}
+.socials a:hover { color:var(--accent); }
 
 .empty {
 grid-column:1/-1;
@@ -504,25 +487,10 @@ padding:30px;
 }
 
 @media(max-width:850px) {
-.hero-grid {
-grid-template-columns:1fr;
-}
-
-.categories {
-grid-template-columns:repeat(2,1fr);
-}
-
-.stats {
-grid-template-columns:repeat(2,1fr);
-}
-
-.job-list {
-grid-template-columns:1fr;
-}
-
-.pricing {
-grid-template-columns:1fr;
-}
+.hero-grid { grid-template-columns:1fr; }
+.categories { grid-template-columns:repeat(2,1fr); }
+.stats { grid-template-columns:repeat(2,1fr); }
+.job-list { grid-template-columns:1fr; }
 }
 
 @media(max-width:650px) {
@@ -539,45 +507,21 @@ align-items:flex-start;
 border-bottom:1px solid var(--border);
 }
 
-.nav-links.open {
-display:flex;
-}
-
-.menu-btn {
-display:block;
-}
-
-.hero {
-padding:75px 0 55px;
-}
-
-section {
-padding:65px 0;
-}
-
-.steps {
-grid-template-columns:1fr;
-}
-
-.categories {
-gap:10px;
-}
-
-.category {
-padding:19px 14px;
-}
-
-.hero h1 {
-letter-spacing:-1.5px;
-}
-
-.cta h2 {
-font-size:28px;
-}
-
+.nav-links.open { display:flex; }
+.menu-btn { display:block; }
+.hero { padding:75px 0 55px; }
+section { padding:65px 0; }
+.steps { grid-template-columns:1fr; }
+.categories { gap:10px; }
+.category { padding:19px 14px; }
+.hero h1 { letter-spacing:-1.5px; }
+.cta h2 { font-size:28px; }
 .footer-content {
 flex-direction:column;
 text-align:center;
+}
+body::before {
+background-attachment:scroll;
 }
 }
 </style>
@@ -587,7 +531,6 @@ text-align:center;
 
 <header>
 <div class="container nav">
-
 <a href="#home" class="logo">salik<span>web.</span></a>
 
 <nav class="nav-links" id="navLinks">
@@ -601,7 +544,6 @@ text-align:center;
 <button class="menu-btn" onclick="toggleMenu()" aria-label="Open Menu">
 <i class="fa-solid fa-bars"></i>
 </button>
-
 </div>
 </header>
 
@@ -611,7 +553,6 @@ text-align:center;
 <div class="container">
 
 <div class="hero-grid">
-
 <div>
 <span class="tag">
 <i class="fa-solid fa-circle-check"></i>
@@ -635,10 +576,7 @@ professional future.
 <a href="#jobs" class="btn primary">
 Explore Jobs <i class="fa-solid fa-arrow-right"></i>
 </a>
-
-<a href="#contact" class="btn secondary">
-Contact Us
-</a>
+<a href="#contact" class="btn secondary">Contact Us</a>
 </div>
 </div>
 
@@ -688,7 +626,6 @@ Featured Opportunities
 Illustrative sample opportunities — not verified live vacancies.
 </small>
 </div>
-
 </div>
 
 <div class="stats">
@@ -772,7 +709,6 @@ Illustrative sample opportunities — not verified live vacancies.
 </div>
 
 <div class="job-controls">
-
 <input type="search" id="searchInput"
 placeholder="Search jobs or skills..."
 oninput="renderJobs()">
@@ -792,11 +728,9 @@ oninput="renderJobs()">
 <option>Freelance</option>
 <option>Part Time</option>
 </select>
-
 </div>
 
 <div class="job-list" id="jobList"></div>
-
 </div>
 </section>
 
@@ -837,7 +771,6 @@ oninput="renderJobs()">
 
 <div class="cta">
 <h2>Ready to Start Your Journey?</h2>
-
 <p>
 Explore opportunities and build your professional future
 with Salikweb.
@@ -874,9 +807,7 @@ Contact Us <i class="fa-solid fa-arrow-right"></i>
 </footer>
 
 <script>
-
 const jobs = [
-
 {
 title:"Frontend Web Developer",
 company:"Digital Studio",
@@ -887,7 +818,6 @@ icon:"fa-code",
 description:"Build responsive websites using HTML, CSS and JavaScript.",
 tags:["HTML","CSS","JavaScript"]
 },
-
 {
 title:"Graphic Designer",
 company:"Creative Agency",
@@ -898,7 +828,6 @@ icon:"fa-palette",
 description:"Create modern logos, banners and social media designs.",
 tags:["Photoshop","Figma","Branding"]
 },
-
 {
 title:"SEO Specialist",
 company:"Growth Media",
@@ -909,7 +838,6 @@ icon:"fa-chart-line",
 description:"Improve search engine visibility and website performance.",
 tags:["SEO","Analytics","Research"]
 },
-
 {
 title:"Content Writer",
 company:"Media House",
@@ -920,7 +848,6 @@ icon:"fa-pen-nib",
 description:"Write informative articles, website content and blogs.",
 tags:["Writing","Blogs","Research"]
 },
-
 {
 title:"AI Automation Developer",
 company:"Future Labs",
@@ -931,7 +858,6 @@ icon:"fa-robot",
 description:"Create automation workflows and AI-powered solutions.",
 tags:["AI","Automation","APIs"]
 },
-
 {
 title:"Mobile App Developer",
 company:"AppWorks",
@@ -942,30 +868,23 @@ icon:"fa-mobile-screen",
 description:"Develop user-friendly mobile applications.",
 tags:["Flutter","Android","Mobile"]
 }
-
 ];
 
 function renderJobs() {
-
 const search = document.getElementById("searchInput").value.toLowerCase();
-
 const category = document.getElementById("categoryFilter").value;
-
 const type = document.getElementById("typeFilter").value;
 
 const filtered = jobs.filter(job => {
-
 const matchesSearch =
 (job.title + " " + job.company + " " +
 job.description + " " + job.tags.join(" "))
 .toLowerCase().includes(search);
 
 const matchesCategory = !category || job.category === category;
-
 const matchesType = !type || job.type === type;
 
 return matchesSearch && matchesCategory && matchesType;
-
 });
 
 const list = document.getElementById("jobList");
@@ -976,20 +895,15 @@ return;
 }
 
 list.innerHTML = filtered.map(job => `
-
 <article class="job-card">
-
 <div class="job-top">
-
 <div class="company-icon">
 <i class="fa-solid ${job.icon}"></i>
 </div>
-
 <div>
 <h3>${job.title}</h3>
 <small>${job.company}</small>
 </div>
-
 </div>
 
 <p>${job.description}</p>
@@ -1005,16 +919,14 @@ ${job.tags.map(tag => `<span>${tag}</span>`).join("")}
 Contact
 </button>
 </div>
-
 </article>
-
 `).join("");
-
 }
 
 function contactJob(title) {
 const subject = encodeURIComponent("Job Inquiry: " + title);
-window.location.href = "mailto:contact@salikweb.com?subject=" + subject;
+window.location.href =
+"mailto:contact@salikweb.com?subject=" + subject;
 }
 
 function toggleMenu() {
@@ -1028,9 +940,7 @@ document.getElementById("navLinks").classList.remove("open");
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
-
 renderJobs();
-
 </script>
 
 </body>
