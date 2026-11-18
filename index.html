@@ -5,690 +5,619 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d13">
-<meta name="description" content="SCRIPTBAKER - AI & Software Engineering. Discover jobs, freelancing and remote work with Salikweb.">
-<title>SALIK | Jobs, Freelancing & Remote Work</title>
+<meta name="description" content="SALIK WEB - Find Jobs, Freelancing, Remote Work, AI and Digital Services.">
+<title>SALIK WEB | Jobs & Digital Services</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root {
-  --bg:#080d13;
-  --panel:#101b24;
-  --panel2:#142631;
-  --text:#f1f8f7;
-  --muted:#9aadb2;
-  --mint:#54e7bd;
-  --blue:#24a9e0;
-  --line:rgba(255,255,255,.10);
+:root{
+--bg:#080d13;
+--panel:#101b24;
+--panel2:#142631;
+--text:#f1f8f7;
+--muted:#9aadb2;
+--mint:#54e7bd;
+--blue:#24a9e0;
+--line:rgba(255,255,255,.10);
 }
 
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{
+scroll-behavior:smooth;
+scroll-padding-top:90px;
 }
 
-html {
-  scroll-behavior:smooth;
-  scroll-padding-top:90px;
+body{
+background:
+radial-gradient(ellipse at 80% 0%,rgba(30,125,140,.16),transparent 35%),
+var(--bg);
+color:var(--text);
+font-family:'DM Sans',sans-serif;
+line-height:1.65;
 }
 
-body {
-  background:
-    radial-gradient(ellipse at 80% 0%,rgba(30,125,140,.16),transparent 35%),
-    var(--bg);
-  color:var(--text);
-  font-family:'DM Sans',sans-serif;
-  line-height:1.65;
-}
-
-a {
-  text-decoration:none;
-  color:inherit;
-}
-
-button,input,select {
-  font:inherit;
-}
-
-.container {
-  width:min(1160px,92%);
-  margin:auto;
-}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
 
 /* HEADER */
 
-header {
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(8,13,19,.94);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(8,13,19,.95);
+backdrop-filter:blur(18px);
+border-bottom:1px solid var(--line);
 }
 
-.nav {
-  min-height:83px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+.nav{
+min-height:82px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
 }
 
-.brand {
-  display:flex;
-  align-items:center;
-  min-width:0;
+.brand-name{
+font-family:'Space Grotesk',sans-serif;
+font-size:28px;
+font-weight:700;
+letter-spacing:-1.5px;
+color:white;
+white-space:nowrap;
 }
 
-.brand img {
-  display:block;
-  width:205px;
-  max-width:100%;
-  height:auto;
-  object-fit:contain;
+.brand-name span{color:var(--mint)}
+
+.brand-subtitle{
+font-size:9px;
+letter-spacing:2px;
+color:var(--muted);
+font-weight:800;
+margin-top:-5px;
 }
 
-.nav-links {
-  display:flex;
-  gap:25px;
-  align-items:center;
-  color:var(--muted);
-  font-size:13px;
-  font-weight:700;
+.nav-links{
+display:flex;
+gap:24px;
+align-items:center;
+color:var(--muted);
+font-size:13px;
+font-weight:700;
 }
 
-.nav-links a:hover {
-  color:var(--mint);
+.nav-links a:hover{color:var(--mint)}
+
+.nav-cta{
+padding:10px 16px;
+border:1px solid rgba(84,231,189,.4);
+border-radius:10px;
+color:var(--mint);
+font-size:12px;
+font-weight:800;
 }
 
-.nav-cta {
-  padding:10px 16px;
-  border:1px solid rgba(84,231,189,.4);
-  border-radius:10px;
-  color:var(--mint);
-  font-size:12px;
-  font-weight:800;
-}
-
-.menu-btn {
-  display:none;
-  background:none;
-  color:white;
-  border:0;
-  font-size:24px;
-  cursor:pointer;
+.menu-btn{
+display:none;
+background:none;
+color:white;
+border:0;
+font-size:24px;
+cursor:pointer;
 }
 
 /* BUTTONS */
 
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  padding:13px 21px;
-  border-radius:11px;
-  font-weight:800;
-  font-size:13px;
-  transition:.2s;
-  border:1px solid transparent;
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:9px;
+padding:13px 21px;
+border-radius:11px;
+font-weight:800;
+font-size:13px;
+transition:.2s;
+border:1px solid transparent;
 }
 
-.btn:hover {
-  transform:translateY(-3px);
+.btn:hover{transform:translateY(-3px)}
+
+.primary{
+background:var(--mint);
+color:#071b16;
 }
 
-.primary {
-  background:var(--mint);
-  color:#071b16;
-}
-
-.secondary {
-  border-color:var(--line);
-  background:rgba(255,255,255,.03);
-  color:white;
+.secondary{
+border-color:var(--line);
+background:rgba(255,255,255,.03);
+color:white;
 }
 
 /* HERO */
 
-.hero {
-  padding:95px 0 70px;
-  position:relative;
-  overflow:hidden;
+.hero{
+padding:95px 0 70px;
+overflow:hidden;
 }
 
-.hero-grid {
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:45px;
-  align-items:center;
+.hero-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:45px;
+align-items:center;
 }
 
-.eyebrow {
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  padding:9px 15px;
-  border:1px solid rgba(84,231,189,.3);
-  background:rgba(84,231,189,.08);
-  border-radius:30px;
-  color:var(--mint);
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:22px;
+.eyebrow{
+display:inline-flex;
+align-items:center;
+gap:9px;
+padding:9px 15px;
+border:1px solid rgba(84,231,189,.3);
+background:rgba(84,231,189,.08);
+border-radius:30px;
+color:var(--mint);
+font-size:12px;
+font-weight:800;
+margin-bottom:22px;
 }
 
-h1,h2,h3 {
-  font-family:'Space Grotesk',sans-serif;
+h1,h2,h3{
+font-family:'Space Grotesk',sans-serif;
 }
 
-h1 {
-  font-size:clamp(43px,6.5vw,76px);
-  line-height:1.08;
-  letter-spacing:-2.5px;
-  margin-bottom:22px;
+h1{
+font-size:clamp(43px,6.5vw,76px);
+line-height:1.08;
+letter-spacing:-2.5px;
+margin-bottom:22px;
 }
 
-h1 span {
-  color:var(--mint);
+h1 span{color:var(--mint)}
+
+.hero-description{
+max-width:610px;
+color:var(--muted);
+font-size:15px;
+margin-bottom:28px;
 }
 
-.hero-description {
-  max-width:610px;
-  color:var(--muted);
-  font-size:15px;
-  margin-bottom:28px;
+.hero-buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
 }
 
-.hero-buttons {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
+/* HERO CARD */
+
+.visual{
+padding:25px;
+border:1px solid var(--line);
+border-radius:25px;
+background:
+linear-gradient(145deg,rgba(84,231,189,.12),rgba(36,169,224,.08)),
+var(--panel);
+box-shadow:0 25px 70px rgba(0,0,0,.2);
 }
 
-/* HERO VISUAL */
-
-.visual {
-  padding:25px;
-  border:1px solid var(--line);
-  border-radius:25px;
-  background:
-    linear-gradient(145deg,rgba(84,231,189,.12),rgba(36,169,224,.08)),
-    var(--panel);
-  box-shadow:0 25px 70px rgba(0,0,0,.2);
+.visual-top{
+display:flex;
+justify-content:space-between;
+color:var(--muted);
+font-size:11px;
+font-weight:800;
 }
 
-.visual-top {
-  display:flex;
-  justify-content:space-between;
-  color:var(--muted);
-  font-size:11px;
-  font-weight:800;
+.visual-title{
+font:700 26px 'Space Grotesk';
+margin:30px 0 20px;
 }
 
-.visual-title {
-  font:700 26px 'Space Grotesk';
-  margin:30px 0 20px;
+.mini-job{
+display:flex;
+align-items:center;
+gap:12px;
+padding:13px;
+margin-top:10px;
+border:1px solid var(--line);
+border-radius:13px;
+background:rgba(7,18,26,.55);
 }
 
-.mini-job {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:13px;
-  margin-top:10px;
-  border:1px solid var(--line);
-  border-radius:13px;
-  background:rgba(7,18,26,.55);
+.mini-icon{
+width:42px;
+height:42px;
+display:grid;
+place-items:center;
+border-radius:12px;
+background:rgba(84,231,189,.12);
+color:var(--mint);
 }
 
-.mini-icon {
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
-  border-radius:12px;
-  background:rgba(84,231,189,.12);
-  color:var(--mint);
+.mini-job strong{
+display:block;
+font-size:13px;
 }
 
-.mini-job strong {
-  display:block;
-  font-size:13px;
+.mini-job small{
+color:var(--muted);
+font-size:11px;
 }
 
-.mini-job small {
-  color:var(--muted);
-  font-size:11px;
-}
-
-.mini-job em {
-  margin-left:auto;
-  color:var(--mint);
-  font-size:10px;
+.mini-job em{
+margin-left:auto;
+color:var(--mint);
+font-size:10px;
 }
 
 /* STATS */
 
-.stats {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  margin-top:55px;
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+margin-top:55px;
 }
 
-.stat {
-  padding:20px;
-  background:rgba(16,27,36,.9);
-  border:1px solid var(--line);
-  border-radius:15px;
+.stat{
+padding:20px;
+background:rgba(16,27,36,.9);
+border:1px solid var(--line);
+border-radius:15px;
 }
 
-.stat strong {
-  display:block;
-  font:700 27px 'Space Grotesk';
-  color:var(--mint);
+.stat strong{
+display:block;
+font:700 27px 'Space Grotesk';
+color:var(--mint);
 }
 
-.stat span {
-  font-size:12px;
-  color:var(--muted);
+.stat span{
+font-size:12px;
+color:var(--muted);
 }
 
-/* GENERAL SECTIONS */
+/* SECTIONS */
 
-section {
-  padding:80px 0;
+section{padding:80px 0}
+
+.section-heading{
+text-align:center;
+max-width:650px;
+margin:0 auto 40px;
 }
 
-.section-heading {
-  text-align:center;
-  max-width:650px;
-  margin:0 auto 40px;
+.section-heading small{
+color:var(--mint);
+font-size:11px;
+font-weight:800;
+letter-spacing:2px;
 }
 
-.section-heading small {
-  color:var(--mint);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:2px;
+.section-heading h2{
+font-size:clamp(29px,4vw,43px);
+margin:8px 0;
 }
 
-.section-heading h2 {
-  font-size:clamp(29px,4vw,43px);
-  margin:8px 0;
-}
-
-.section-heading p {
-  color:var(--muted);
-  font-size:14px;
+.section-heading p{
+color:var(--muted);
+font-size:14px;
 }
 
 /* CATEGORIES */
 
-.category-grid {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
+.category-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
 }
 
-.category {
-  padding:24px 20px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:var(--panel);
-  transition:.2s;
+.category{
+padding:24px 20px;
+border:1px solid var(--line);
+border-radius:17px;
+background:var(--panel);
+transition:.2s;
 }
 
-.category:hover {
-  transform:translateY(-5px);
-  border-color:var(--mint);
-  background:var(--panel2);
+.category:hover{
+transform:translateY(-5px);
+border-color:var(--mint);
+background:var(--panel2);
 }
 
-.category-icon {
-  width:47px;
-  height:47px;
-  display:grid;
-  place-items:center;
-  border-radius:13px;
-  background:rgba(84,231,189,.1);
-  color:var(--mint);
-  font-size:21px;
-  margin-bottom:15px;
+.category-icon{
+width:47px;
+height:47px;
+display:grid;
+place-items:center;
+border-radius:13px;
+background:rgba(84,231,189,.1);
+color:var(--mint);
+font-size:21px;
+margin-bottom:15px;
 }
 
-.category h3 {
-  font-size:16px;
-  margin-bottom:7px;
+.category h3{
+font-size:16px;
+margin-bottom:7px;
 }
 
-.category p {
-  font-size:12px;
-  color:var(--muted);
+.category p{
+font-size:12px;
+color:var(--muted);
 }
 
 /* JOBS */
 
-.jobs-section {
-  background:rgba(11,26,35,.75);
-  border-block:1px solid var(--line);
+.jobs-section{
+background:rgba(11,26,35,.75);
+border-block:1px solid var(--line);
 }
 
-.controls {
-  display:grid;
-  grid-template-columns:1fr 220px 190px;
-  gap:12px;
-  margin-bottom:22px;
+.controls{
+display:grid;
+grid-template-columns:1fr 220px 190px;
+gap:12px;
+margin-bottom:22px;
 }
 
-.field {
-  width:100%;
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:#10212b;
-  color:white;
-  outline:none;
+.field{
+width:100%;
+padding:14px;
+border:1px solid var(--line);
+border-radius:10px;
+background:#10212b;
+color:white;
+outline:none;
 }
 
-.field:focus {
-  border-color:var(--mint);
+.field:focus{border-color:var(--mint)}
+.field option{background:#10212b}
+
+.job-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
 }
 
-.field option {
-  background:#10212b;
+.job-card{
+padding:22px;
+border:1px solid var(--line);
+border-radius:16px;
+background:var(--panel);
+transition:.2s;
 }
 
-.job-grid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
+.job-card:hover{
+border-color:rgba(84,231,189,.5);
+transform:translateY(-3px);
 }
 
-.job-card {
-  padding:22px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:var(--panel);
-  transition:.2s;
+.job-top{
+display:flex;
+align-items:center;
+gap:13px;
 }
 
-.job-card:hover {
-  border-color:rgba(84,231,189,.5);
-  transform:translateY(-3px);
+.job-icon{
+width:46px;
+height:46px;
+display:grid;
+place-items:center;
+border-radius:12px;
+background:rgba(36,169,224,.12);
+color:var(--blue);
 }
 
-.job-top {
-  display:flex;
-  align-items:center;
-  gap:13px;
+.job-top h3{font-size:16px}
+.job-top small{color:var(--muted);font-size:11px}
+
+.job-description{
+color:var(--muted);
+font-size:13px;
+margin:16px 0;
 }
 
-.job-icon {
-  width:46px;
-  height:46px;
-  display:grid;
-  place-items:center;
-  border-radius:12px;
-  background:rgba(36,169,224,.12);
-  color:var(--blue);
+.job-tags{
+display:flex;
+flex-wrap:wrap;
+gap:7px;
+margin-bottom:17px;
 }
 
-.job-top h3 {
-  font-size:16px;
+.job-tags span{
+padding:5px 9px;
+border-radius:6px;
+background:rgba(84,231,189,.08);
+color:var(--mint);
+font-size:10px;
 }
 
-.job-top small {
-  color:var(--muted);
-  font-size:11px;
+.job-bottom{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+border-top:1px solid var(--line);
+padding-top:14px;
 }
 
-.job-description {
-  color:var(--muted);
-  font-size:13px;
-  margin:16px 0;
+.salary{
+color:var(--mint);
+font-size:13px;
+font-weight:800;
 }
 
-.job-tags {
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-bottom:17px;
+.job-type{
+color:var(--muted);
+font-size:11px;
 }
 
-.job-tags span {
-  padding:5px 9px;
-  border-radius:6px;
-  background:rgba(84,231,189,.08);
-  color:var(--mint);
-  font-size:10px;
+.apply{
+color:var(--mint);
+font-size:12px;
+font-weight:800;
 }
 
-.job-bottom {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  border-top:1px solid var(--line);
-  padding-top:14px;
+.empty{
+grid-column:1/-1;
+text-align:center;
+padding:30px;
+color:var(--muted);
 }
 
-.salary {
-  color:var(--mint);
-  font-size:13px;
-  font-weight:800;
-}
-
-.job-type {
-  color:var(--muted);
-  font-size:11px;
-}
-
-.apply {
-  color:var(--mint);
-  font-size:12px;
-  font-weight:800;
-}
-
-.empty {
-  grid-column:1/-1;
-  text-align:center;
-  padding:30px;
-  color:var(--muted);
-}
-
-.notice {
-  text-align:center;
-  color:var(--muted);
-  font-size:11px;
-  margin-top:16px;
+.notice{
+text-align:center;
+color:var(--muted);
+font-size:11px;
+margin-top:16px;
 }
 
 /* HOW IT WORKS */
 
-.steps {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:17px;
 }
 
-.step {
-  padding:27px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:var(--panel);
+.step{
+padding:27px;
+border:1px solid var(--line);
+border-radius:17px;
+background:var(--panel);
 }
 
-.step-number {
-  font:700 34px 'Space Grotesk';
-  color:var(--mint);
+.step-number{
+font:700 34px 'Space Grotesk';
+color:var(--mint);
 }
 
-.step h3 {
-  font-size:18px;
-  margin:10px 0;
+.step h3{
+font-size:18px;
+margin:10px 0;
 }
 
-.step p {
-  color:var(--muted);
-  font-size:13px;
+.step p{
+color:var(--muted);
+font-size:13px;
 }
 
 /* CONTACT */
 
-.cta {
-  padding:55px 25px;
-  text-align:center;
-  border-radius:23px;
-  border:1px solid rgba(84,231,189,.25);
-  background:linear-gradient(120deg,#102e30,#14283e);
+.cta{
+padding:55px 25px;
+text-align:center;
+border-radius:23px;
+border:1px solid rgba(84,231,189,.25);
+background:linear-gradient(120deg,#102e30,#14283e);
 }
 
-.cta h2 {
-  font-size:clamp(28px,4vw,39px);
-  margin-bottom:12px;
+.cta h2{
+font-size:clamp(28px,4vw,39px);
+margin-bottom:12px;
 }
 
-.cta p {
-  color:#b6c9ca;
-  margin:0 auto 24px;
-  max-width:570px;
+.cta p{
+color:#b6c9ca;
+margin:0 auto 24px;
+max-width:570px;
 }
 
 /* FOOTER */
 
-footer {
-  padding:30px 0;
-  border-top:1px solid var(--line);
-  background:#05090e;
+footer{
+padding:30px 0;
+border-top:1px solid var(--line);
+background:#05090e;
 }
 
-.footer-row {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
+.footer-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
-.footer-logo img {
-  width:190px;
-  height:auto;
-  display:block;
+.footer-copy{
+color:var(--muted);
+font-size:12px;
 }
 
-.footer-copy {
-  color:var(--muted);
-  font-size:12px;
+.socials{
+display:flex;
+gap:18px;
+color:var(--muted);
+font-size:20px;
 }
 
-.socials {
-  display:flex;
-  gap:18px;
-  color:var(--muted);
-  font-size:20px;
-}
-
-.socials a:hover {
-  color:var(--mint);
-}
+.socials a:hover{color:var(--mint)}
 
 /* MOBILE */
 
-@media(max-width:900px) {
-  .hero-grid {
-    grid-template-columns:1fr;
-  }
-
-  .category-grid {
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .stats {
-    grid-template-columns:repeat(2,1fr);
-  }
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr}
+.category-grid{grid-template-columns:repeat(2,1fr)}
+.stats{grid-template-columns:repeat(2,1fr)}
 }
 
-@media(max-width:680px) {
-  .nav {
-    min-height:70px;
-  }
+@media(max-width:680px){
+.nav{min-height:70px}
+.menu-btn{display:block}
+.nav-cta{display:none}
 
-  .brand img {
-    width:175px;
-  }
-
-  .menu-btn {
-    display:block;
-  }
-
-  .nav-cta {
-    display:none;
-  }
-
-  .nav-links {
-    display:none;
-    position:absolute;
-    top:70px;
-    left:0;
-    right:0;
-    padding:22px 5%;
-    background:#0d1b25;
-    border-bottom:1px solid var(--line);
-    flex-direction:column;
-    align-items:flex-start;
-    gap:18px;
-  }
-
-  .nav-links.open {
-    display:flex;
-  }
-
-  .hero {
-    padding:65px 0 50px;
-  }
-
-  section {
-    padding:60px 0;
-  }
-
-  .controls {
-    grid-template-columns:1fr;
-  }
-
-  .job-grid,
-  .steps {
-    grid-template-columns:1fr;
-  }
-
-  .footer-row {
-    flex-direction:column;
-    text-align:center;
-  }
+.nav-links{
+display:none;
+position:absolute;
+top:70px;
+left:0;
+right:0;
+padding:22px 5%;
+background:#0d1b25;
+border-bottom:1px solid var(--line);
+flex-direction:column;
+align-items:flex-start;
+gap:18px;
 }
 
-@media(max-width:390px) {
-  .category-grid {
-    grid-template-columns:1fr;
-  }
+.nav-links.open{display:flex}
+
+.hero{padding:65px 0 50px}
+section{padding:60px 0}
+.controls{grid-template-columns:1fr}
+.job-grid,.steps{grid-template-columns:1fr}
+
+.footer-row{
+flex-direction:column;
+text-align:center;
+}
+}
+
+@media(max-width:390px){
+.category-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER WITH SCRIPTBAKER LOGO -->
+<!-- HEADER -->
 
 <header>
 <div class="container nav">
 
 <a href="#home" class="brand">
-<img src="scriptbaker-logo.png"
-alt="SCRIPTBAKER - AI & Software Engineering">
+<div>
+<div class="brand-name">SALIK<span> WEB.</span></div>
+<div class="brand-subtitle">DIGITAL SERVICES & TECHNOLOGY</div>
+</div>
 </a>
 
 <nav class="nav-links" id="navLinks">
@@ -701,7 +630,7 @@ alt="SCRIPTBAKER - AI & Software Engineering">
 
 <a href="#jobs" class="nav-cta">Find Opportunities</a>
 
-<button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+<button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
 <i class="fa-solid fa-bars"></i>
 </button>
 
@@ -731,10 +660,9 @@ Build Skills.<br>
 </h1>
 
 <p class="hero-description">
-Welcome to SCRIPTBAKER. Discover online job opportunities,
-freelancing projects and remote careers.
-Explore digital skills and build your professional future
-with Salikweb.
+Welcome to SALIK WEB. Discover online job opportunities,
+freelancing projects, remote careers and digital services.
+Explore new skills and build your professional future.
 </p>
 
 <div class="hero-buttons">
@@ -752,7 +680,7 @@ Explore Categories
 <div class="visual">
 
 <div class="visual-top">
-<span><i class="fa-solid fa-circle" style="color:var(--mint)"></i> SCRIPTBAKER CAREER</span>
+<span><i class="fa-solid fa-circle" style="color:var(--mint)"></i> SALIK WEB</span>
 <span>01 / 04</span>
 </div>
 
@@ -905,7 +833,7 @@ aria-label="Search jobs">
 <div class="job-grid" id="jobList"></div>
 
 <p class="notice">
-These are demonstration listings, not verified live vacancies.
+These are sample listings, not verified live vacancies.
 Always verify employers before applying.
 </p>
 
@@ -919,7 +847,7 @@ Always verify employers before applying.
 
 <div class="section-heading">
 <small>START YOUR JOURNEY</small>
-<h2>How SCRIPTBAKER Works</h2>
+<h2>How SALIK WEB Works</h2>
 <p>Start exploring online career opportunities in three simple steps.</p>
 </div>
 
@@ -954,7 +882,7 @@ Always verify employers before applying.
 
 <div class="cta">
 
-<h2>Build Your Future with SCRIPTBAKER</h2>
+<h2>Build Your Future with SALIK WEB</h2>
 
 <p>
 Have a question or want to connect?
@@ -979,12 +907,9 @@ Contact Us <i class="fa-brands fa-instagram"></i>
 <footer>
 <div class="container footer-row">
 
-<div class="footer-logo">
-<a href="#home">
-<img src="scriptbaker-logo.png"
-alt="SCRIPTBAKER AI and Software Engineering">
-</a>
-<p class="footer-copy">Technology & Digital Services</p>
+<div>
+<a href="#home" class="brand-name">SALIK<span> WEB.</span></a>
+<p class="footer-copy">Web Development • AI • Digital Services</p>
 </div>
 
 <div class="socials">
@@ -1010,7 +935,7 @@ aria-label="TikTok">
 </div>
 
 <p class="footer-copy">
-© <span id="year"></span> SCRIPTBAKER. All Rights Reserved.
+© <span id="year"></span> SALIK WEB. All Rights Reserved.
 </p>
 
 </div>
@@ -1090,20 +1015,20 @@ tags:["Flutter","Android","Mobile"]
 
 ];
 
-const jobList = document.getElementById("jobList");
-const searchInput = document.getElementById("searchInput");
-const categoryFilter = document.getElementById("categoryFilter");
-const typeFilter = document.getElementById("typeFilter");
+const jobList=document.getElementById("jobList");
+const searchInput=document.getElementById("searchInput");
+const categoryFilter=document.getElementById("categoryFilter");
+const typeFilter=document.getElementById("typeFilter");
 
-function renderJobs() {
+function renderJobs(){
 
-const search = searchInput.value.trim().toLowerCase();
-const category = categoryFilter.value;
-const type = typeFilter.value;
+const search=searchInput.value.trim().toLowerCase();
+const category=categoryFilter.value;
+const type=typeFilter.value;
 
-const filtered = jobs.filter(job => {
+const filtered=jobs.filter(job=>{
 
-const text = [
+const text=[
 job.title,
 job.company,
 job.description,
@@ -1113,22 +1038,23 @@ job.type,
 ].join(" ").toLowerCase();
 
 return text.includes(search)
-&& (!category || job.category === category)
-&& (!type || job.type === type);
+&&(!category||job.category===category)
+&&(!type||job.type===type);
 
 });
 
-if (!filtered.length) {
-jobList.innerHTML =
+if(!filtered.length){
+jobList.innerHTML=
 '<div class="empty">No matching sample jobs found. Try another search.</div>';
 return;
 }
 
-jobList.innerHTML = filtered.map(job => `
+jobList.innerHTML=filtered.map(job=>`
 
 <article class="job-card">
 
 <div class="job-top">
+
 <div class="job-icon">
 <i class="fa-solid ${job.icon}"></i>
 </div>
@@ -1137,12 +1063,13 @@ jobList.innerHTML = filtered.map(job => `
 <h3>${job.title}</h3>
 <small>${job.company} · ${job.category}</small>
 </div>
+
 </div>
 
 <p class="job-description">${job.description}</p>
 
 <div class="job-tags">
-${job.tags.map(tag => `<span>${tag}</span>`).join("")}
+${job.tags.map(tag=>`<span>${tag}</span>`).join("")}
 </div>
 
 <div class="job-bottom">
@@ -1166,43 +1093,43 @@ searchInput.addEventListener("input",renderJobs);
 categoryFilter.addEventListener("change",renderJobs);
 typeFilter.addEventListener("change",renderJobs);
 
-// MOBILE MENU
+/* MOBILE MENU */
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click",()=>{
 
-const open = navLinks.classList.toggle("open");
+const open=navLinks.classList.toggle("open");
 
 menuBtn.setAttribute("aria-expanded",String(open));
 
-menuBtn.innerHTML = open
-? '<i class="fa-solid fa-xmark"></i>'
-: '<i class="fa-solid fa-bars"></i>';
+menuBtn.innerHTML=open
+?'<i class="fa-solid fa-xmark"></i>'
+:'<i class="fa-solid fa-bars"></i>';
 
 });
 
-navLinks.querySelectorAll("a").forEach(link => {
+navLinks.querySelectorAll("a").forEach(link=>{
 
-link.addEventListener("click",() => {
+link.addEventListener("click",()=>{
 
 navLinks.classList.remove("open");
 
 menuBtn.setAttribute("aria-expanded","false");
 
-menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
 
 });
 
 });
 
-// CURRENT YEAR
+/* CURRENT YEAR */
 
-document.getElementById("year").textContent =
+document.getElementById("year").textContent=
 new Date().getFullYear();
 
-// LOAD JOBS
+/* LOAD JOBS */
 
 renderJobs();
 
