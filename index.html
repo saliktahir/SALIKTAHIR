@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d13">
-<meta name="description" content="SALIK WEB - Find Jobs, Freelancing, Remote Work, AI and Digital Services.">
-<title>SALIK WEB | Jobs & Digital Services</title>
+<meta name="description" content="SCRIPTBAKER - AI, Software Engineering, Web Development and Digital Services by Salik Tahir.">
+<title>SCRIPTBAKER | AI & Software Engineering</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -25,16 +25,10 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-
-html{
-scroll-behavior:smooth;
-scroll-padding-top:90px;
-}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 
 body{
-background:
-radial-gradient(ellipse at 80% 0%,rgba(30,125,140,.16),transparent 35%),
-var(--bg);
+background:radial-gradient(ellipse at 80% 0%,rgba(30,125,140,.16),transparent 35%),var(--bg);
 color:var(--text);
 font-family:'DM Sans',sans-serif;
 line-height:1.65;
@@ -50,7 +44,7 @@ header{
 position:sticky;
 top:0;
 z-index:100;
-background:rgba(8,13,19,.95);
+background:rgba(8,13,19,.96);
 backdrop-filter:blur(18px);
 border-bottom:1px solid var(--line);
 }
@@ -63,23 +57,38 @@ justify-content:space-between;
 gap:20px;
 }
 
+.brand{
+display:flex;
+align-items:center;
+gap:11px;
+}
+
+.logo-mark{
+width:39px;
+height:39px;
+display:grid;
+place-items:center;
+color:var(--blue);
+font-size:29px;
+}
+
 .brand-name{
 font-family:'Space Grotesk',sans-serif;
-font-size:28px;
+font-size:23px;
 font-weight:700;
-letter-spacing:-1.5px;
+letter-spacing:-1px;
 color:white;
 white-space:nowrap;
 }
 
-.brand-name span{color:var(--mint)}
+.brand-name span{color:var(--blue)}
 
 .brand-subtitle{
 font-size:9px;
-letter-spacing:2px;
+letter-spacing:1.7px;
 color:var(--muted);
 font-weight:800;
-margin-top:-5px;
+margin-top:-4px;
 }
 
 .nav-links{
@@ -127,11 +136,7 @@ border:1px solid transparent;
 }
 
 .btn:hover{transform:translateY(-3px)}
-
-.primary{
-background:var(--mint);
-color:#071b16;
-}
+.primary{background:var(--mint);color:#071b16}
 
 .secondary{
 border-color:var(--line);
@@ -142,7 +147,7 @@ color:white;
 /* HERO */
 
 .hero{
-padding:95px 0 70px;
+padding:65px 0 55px;
 overflow:hidden;
 }
 
@@ -156,20 +161,19 @@ align-items:center;
 .eyebrow{
 display:inline-flex;
 align-items:center;
-gap:9px;
-padding:9px 15px;
-border:1px solid rgba(84,231,189,.3);
+gap:10px;
+padding:10px 20px;
+border:1px solid rgba(84,231,189,.35);
 background:rgba(84,231,189,.08);
 border-radius:30px;
 color:var(--mint);
-font-size:12px;
+font-size:14px;
 font-weight:800;
+letter-spacing:1px;
 margin-bottom:22px;
 }
 
-h1,h2,h3{
-font-family:'Space Grotesk',sans-serif;
-}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif}
 
 h1{
 font-size:clamp(43px,6.5vw,76px);
@@ -199,9 +203,7 @@ flex-wrap:wrap;
 padding:25px;
 border:1px solid var(--line);
 border-radius:25px;
-background:
-linear-gradient(145deg,rgba(84,231,189,.12),rgba(36,169,224,.08)),
-var(--panel);
+background:linear-gradient(145deg,rgba(84,231,189,.12),rgba(36,169,224,.08)),var(--panel);
 box-shadow:0 25px 70px rgba(0,0,0,.2);
 }
 
@@ -239,21 +241,9 @@ background:rgba(84,231,189,.12);
 color:var(--mint);
 }
 
-.mini-job strong{
-display:block;
-font-size:13px;
-}
-
-.mini-job small{
-color:var(--muted);
-font-size:11px;
-}
-
-.mini-job em{
-margin-left:auto;
-color:var(--mint);
-font-size:10px;
-}
+.mini-job strong{display:block;font-size:13px}
+.mini-job small{color:var(--muted);font-size:11px}
+.mini-job em{margin-left:auto;color:var(--mint);font-size:10px}
 
 /* STATS */
 
@@ -261,7 +251,7 @@ font-size:10px;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:14px;
-margin-top:55px;
+margin-top:45px;
 }
 
 .stat{
@@ -277,14 +267,11 @@ font:700 27px 'Space Grotesk';
 color:var(--mint);
 }
 
-.stat span{
-font-size:12px;
-color:var(--muted);
-}
+.stat span{font-size:12px;color:var(--muted)}
 
 /* SECTIONS */
 
-section{padding:80px 0}
+section{padding:75px 0}
 
 .section-heading{
 text-align:center;
@@ -304,10 +291,7 @@ font-size:clamp(29px,4vw,43px);
 margin:8px 0;
 }
 
-.section-heading p{
-color:var(--muted);
-font-size:14px;
-}
+.section-heading p{color:var(--muted);font-size:14px}
 
 /* CATEGORIES */
 
@@ -343,15 +327,8 @@ font-size:21px;
 margin-bottom:15px;
 }
 
-.category h3{
-font-size:16px;
-margin-bottom:7px;
-}
-
-.category p{
-font-size:12px;
-color:var(--muted);
-}
+.category h3{font-size:16px;margin-bottom:7px}
+.category p{font-size:12px;color:var(--muted)}
 
 /* JOBS */
 
@@ -399,11 +376,7 @@ border-color:rgba(84,231,189,.5);
 transform:translateY(-3px);
 }
 
-.job-top{
-display:flex;
-align-items:center;
-gap:13px;
-}
+.job-top{display:flex;align-items:center;gap:13px}
 
 .job-icon{
 width:46px;
@@ -448,36 +421,11 @@ border-top:1px solid var(--line);
 padding-top:14px;
 }
 
-.salary{
-color:var(--mint);
-font-size:13px;
-font-weight:800;
-}
-
-.job-type{
-color:var(--muted);
-font-size:11px;
-}
-
-.apply{
-color:var(--mint);
-font-size:12px;
-font-weight:800;
-}
-
-.empty{
-grid-column:1/-1;
-text-align:center;
-padding:30px;
-color:var(--muted);
-}
-
-.notice{
-text-align:center;
-color:var(--muted);
-font-size:11px;
-margin-top:16px;
-}
+.salary{color:var(--mint);font-size:13px;font-weight:800}
+.job-type{color:var(--muted);font-size:11px}
+.apply{color:var(--mint);font-size:12px;font-weight:800}
+.empty{grid-column:1/-1;text-align:center;padding:30px;color:var(--muted)}
+.notice{text-align:center;color:var(--muted);font-size:11px;margin-top:16px}
 
 /* HOW IT WORKS */
 
@@ -494,20 +442,9 @@ border-radius:17px;
 background:var(--panel);
 }
 
-.step-number{
-font:700 34px 'Space Grotesk';
-color:var(--mint);
-}
-
-.step h3{
-font-size:18px;
-margin:10px 0;
-}
-
-.step p{
-color:var(--muted);
-font-size:13px;
-}
+.step-number{font:700 34px 'Space Grotesk';color:var(--mint)}
+.step h3{font-size:18px;margin:10px 0}
+.step p{color:var(--muted);font-size:13px}
 
 /* CONTACT */
 
@@ -519,16 +456,8 @@ border:1px solid rgba(84,231,189,.25);
 background:linear-gradient(120deg,#102e30,#14283e);
 }
 
-.cta h2{
-font-size:clamp(28px,4vw,39px);
-margin-bottom:12px;
-}
-
-.cta p{
-color:#b6c9ca;
-margin:0 auto 24px;
-max-width:570px;
-}
+.cta h2{font-size:clamp(28px,4vw,39px);margin-bottom:12px}
+.cta p{color:#b6c9ca;margin:0 auto 24px;max-width:570px}
 
 /* FOOTER */
 
@@ -546,10 +475,7 @@ gap:20px;
 flex-wrap:wrap;
 }
 
-.footer-copy{
-color:var(--muted);
-font-size:12px;
-}
+.footer-copy{color:var(--muted);font-size:12px}
 
 .socials{
 display:flex;
@@ -588,16 +514,11 @@ gap:18px;
 }
 
 .nav-links.open{display:flex}
-
-.hero{padding:65px 0 50px}
-section{padding:60px 0}
+.hero{padding:45px 0 40px}
+section{padding:55px 0}
 .controls{grid-template-columns:1fr}
 .job-grid,.steps{grid-template-columns:1fr}
-
-.footer-row{
-flex-direction:column;
-text-align:center;
-}
+.footer-row{flex-direction:column;text-align:center}
 }
 
 @media(max-width:390px){
@@ -614,21 +535,24 @@ text-align:center;
 <div class="container nav">
 
 <a href="#home" class="brand">
+<div class="logo-mark">
+<i class="fa-solid fa-code"></i>
+</div>
 <div>
-<div class="brand-name">SALIK<span> WEB.</span></div>
-<div class="brand-subtitle">DIGITAL SERVICES & TECHNOLOGY</div>
+<div class="brand-name">SCRIPT<span>BAKER</span></div>
+<div class="brand-subtitle">AI & SOFTWARE ENGINEERING</div>
 </div>
 </a>
 
 <nav class="nav-links" id="navLinks">
 <a href="#home">Home</a>
-<a href="#categories">Categories</a>
-<a href="#jobs">Find Jobs</a>
-<a href="#how">How It Works</a>
+<a href="#categories">Services</a>
+<a href="#jobs">Projects</a>
+<a href="#how">About</a>
 <a href="#contact">Contact</a>
 </nav>
 
-<a href="#jobs" class="nav-cta">Find Opportunities</a>
+<a href="#contact" class="nav-cta">Get In Touch</a>
 
 <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
 <i class="fa-solid fa-bars"></i>
@@ -650,28 +574,28 @@ text-align:center;
 
 <div class="eyebrow">
 <i class="fa-solid fa-circle-check"></i>
-Find Jobs • Freelancing • Remote Work
+SCRIPTBAKER
 </div>
 
 <h1>
-Find Work.<br>
-Build Skills.<br>
-<span>Grow Online.</span>
+Build Smart.<br>
+Create Digital.<br>
+<span>Grow Beyond.</span>
 </h1>
 
 <p class="hero-description">
-Welcome to SALIK WEB. Discover online job opportunities,
-freelancing projects, remote careers and digital services.
-Explore new skills and build your professional future.
+Welcome to SCRIPTBAKER. We create modern websites,
+mobile applications, AI-powered solutions and professional
+digital services to help businesses grow online.
 </p>
 
 <div class="hero-buttons">
-<a href="#jobs" class="btn primary">
-Explore Jobs <i class="fa-solid fa-arrow-right"></i>
+<a href="#categories" class="btn primary">
+Explore Services <i class="fa-solid fa-arrow-right"></i>
 </a>
 
-<a href="#categories" class="btn secondary">
-Explore Categories
+<a href="#contact" class="btn secondary">
+Contact Us
 </a>
 </div>
 
@@ -680,19 +604,19 @@ Explore Categories
 <div class="visual">
 
 <div class="visual-top">
-<span><i class="fa-solid fa-circle" style="color:var(--mint)"></i> SALIK WEB</span>
+<span><i class="fa-solid fa-circle" style="color:var(--mint)"></i> SCRIPTBAKER</span>
 <span>01 / 04</span>
 </div>
 
 <div class="visual-title">
-Opportunities start<br>with one skill.
+Technology that<br>moves you forward.
 </div>
 
 <div class="mini-job">
 <div class="mini-icon"><i class="fa-solid fa-code"></i></div>
 <div>
 <strong>Web Development</strong>
-<small>Websites and programming</small>
+<small>Modern websites and platforms</small>
 </div>
 <em>01</em>
 </div>
@@ -707,10 +631,10 @@ Opportunities start<br>with one skill.
 </div>
 
 <div class="mini-job">
-<div class="mini-icon"><i class="fa-solid fa-pen-nib"></i></div>
+<div class="mini-icon"><i class="fa-solid fa-mobile-screen"></i></div>
 <div>
-<strong>Creative Services</strong>
-<small>Design and content</small>
+<strong>App Development</strong>
+<small>Mobile application solutions</small>
 </div>
 <em>03</em>
 </div>
@@ -719,24 +643,24 @@ Opportunities start<br>with one skill.
 </div>
 
 <div class="stats">
-<div class="stat"><strong>08+</strong><span>Job Categories</span></div>
-<div class="stat"><strong>24/7</strong><span>Website Access</span></div>
+<div class="stat"><strong>08+</strong><span>Digital Services</span></div>
+<div class="stat"><strong>24/7</strong><span>Online Access</span></div>
 <div class="stat"><strong>100%</strong><span>Responsive Design</span></div>
-<div class="stat"><strong>Global</strong><span>Remote Work Focus</span></div>
+<div class="stat"><strong>Global</strong><span>Digital Solutions</span></div>
 </div>
 
 </div>
 </section>
 
-<!-- CATEGORIES -->
+<!-- SERVICES -->
 
 <section id="categories">
 <div class="container">
 
 <div class="section-heading">
-<small>EXPLORE YOUR SKILLS</small>
-<h2>Explore Job Categories</h2>
-<p>Discover digital skills and explore different career opportunities.</p>
+<small>WHAT WE DO</small>
+<h2>Our Digital Services</h2>
+<p>Professional technology services for your business and digital growth.</p>
 </div>
 
 <div class="category-grid">
@@ -744,73 +668,70 @@ Opportunities start<br>with one skill.
 <div class="category">
 <div class="category-icon"><i class="fa-solid fa-code"></i></div>
 <h3>Web Development</h3>
-<p>Websites, applications and programming.</p>
+<p>Modern websites, web applications and programming.</p>
 </div>
 
 <div class="category">
 <div class="category-icon"><i class="fa-solid fa-pen-nib"></i></div>
 <h3>Content Writing</h3>
-<p>Articles, blogs and website content.</p>
+<p>Professional articles, blogs and website content.</p>
 </div>
 
 <div class="category">
 <div class="category-icon"><i class="fa-solid fa-palette"></i></div>
 <h3>Graphic Design</h3>
-<p>Logos, branding and creative visuals.</p>
+<p>Logos, branding and creative visual designs.</p>
 </div>
 
 <div class="category">
 <div class="category-icon"><i class="fa-solid fa-bullhorn"></i></div>
 <h3>Digital Marketing</h3>
-<p>Social media and online marketing.</p>
+<p>Social media and online marketing solutions.</p>
 </div>
 
 <div class="category">
 <div class="category-icon"><i class="fa-solid fa-chart-line"></i></div>
 <h3>SEO Services</h3>
-<p>Search engine optimization.</p>
+<p>Search engine optimization and website growth.</p>
 </div>
 
 <div class="category">
 <div class="category-icon"><i class="fa-solid fa-robot"></i></div>
 <h3>AI Services</h3>
-<p>AI tools and smart automation.</p>
+<p>AI tools, intelligent systems and automation.</p>
 </div>
 
 <div class="category">
 <div class="category-icon"><i class="fa-solid fa-video"></i></div>
 <h3>Video Editing</h3>
-<p>Video production and editing.</p>
+<p>Creative video production and editing.</p>
 </div>
 
 <div class="category">
 <div class="category-icon"><i class="fa-solid fa-mobile-screen"></i></div>
 <h3>App Development</h3>
-<p>Android and mobile applications.</p>
+<p>Android and mobile application development.</p>
 </div>
 
 </div>
 </div>
 </section>
 
-<!-- JOBS -->
+<!-- PROJECTS -->
 
 <section class="jobs-section" id="jobs">
 <div class="container">
 
 <div class="section-heading">
-<small>YOUR NEXT OPPORTUNITY</small>
-<h2>Find Your Next Opportunity</h2>
-<p>Search and filter example job listings.</p>
+<small>OUR WORK</small>
+<h2>Explore Our Projects</h2>
+<p>Discover our example digital projects and technologies.</p>
 </div>
 
 <div class="controls">
 
-<input class="field"
-type="search"
-id="searchInput"
-placeholder="Search jobs or skills..."
-aria-label="Search jobs">
+<input class="field" type="search" id="searchInput"
+placeholder="Search projects or technologies..." aria-label="Search projects">
 
 <select class="field" id="categoryFilter">
 <option value="">All Categories</option>
@@ -822,53 +743,51 @@ aria-label="Search jobs">
 </select>
 
 <select class="field" id="typeFilter">
-<option value="">All Job Types</option>
-<option value="Remote">Remote</option>
-<option value="Freelance">Freelance</option>
-<option value="Part Time">Part Time</option>
+<option value="">All Technologies</option>
+<option value="HTML">HTML</option>
+<option value="JavaScript">JavaScript</option>
+<option value="AI">AI</option>
+<option value="Design">Design</option>
 </select>
 
 </div>
 
 <div class="job-grid" id="jobList"></div>
 
-<p class="notice">
-These are sample listings, not verified live vacancies.
-Always verify employers before applying.
-</p>
+<p class="notice">These are example projects for demonstration purposes.</p>
 
 </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- ABOUT -->
 
 <section id="how">
 <div class="container">
 
 <div class="section-heading">
-<small>START YOUR JOURNEY</small>
-<h2>How SALIK WEB Works</h2>
-<p>Start exploring online career opportunities in three simple steps.</p>
+<small>ABOUT SCRIPTBAKER</small>
+<h2>Technology Meets Creativity</h2>
+<p>We turn ideas into modern digital experiences through technology and innovation.</p>
 </div>
 
 <div class="steps">
 
 <div class="step">
 <div class="step-number">01</div>
-<h3>Explore Opportunities</h3>
-<p>Discover digital jobs, freelancing and remote work categories.</p>
+<h3>Understand</h3>
+<p>We understand your ideas, business goals and digital requirements.</p>
 </div>
 
 <div class="step">
 <div class="step-number">02</div>
-<h3>Build Your Skills</h3>
-<p>Improve your knowledge and create professional projects.</p>
+<h3>Create</h3>
+<p>We develop creative, modern and practical digital solutions.</p>
 </div>
 
 <div class="step">
 <div class="step-number">03</div>
-<h3>Apply & Grow</h3>
-<p>Prepare your portfolio and connect with potential clients.</p>
+<h3>Grow</h3>
+<p>We help you build your online presence and grow your business.</p>
 </div>
 
 </div>
@@ -881,18 +800,16 @@ Always verify employers before applying.
 <div class="container">
 
 <div class="cta">
-
-<h2>Build Your Future with SALIK WEB</h2>
+<h2>Let's Build Something Amazing</h2>
 
 <p>
-Have a question or want to connect?
-Contact Salik Tahir and explore our digital world.
+Have an idea or need a digital solution?
+Connect with SCRIPTBAKER and let's create something great.
 </p>
 
 <a class="btn primary"
 href="https://www.instagram.com/saliktahir.pk/"
-target="_blank"
-rel="noopener noreferrer">
+target="_blank" rel="noopener noreferrer">
 Contact Us <i class="fa-brands fa-instagram"></i>
 </a>
 
@@ -908,109 +825,98 @@ Contact Us <i class="fa-brands fa-instagram"></i>
 <div class="container footer-row">
 
 <div>
-<a href="#home" class="brand-name">SALIK<span> WEB.</span></a>
-<p class="footer-copy">Web Development • AI • Digital Services</p>
+<a href="#home" class="brand-name">SCRIPT<span>BAKER</span></a>
+<p class="footer-copy">AI • Software Engineering • Digital Services</p>
 </div>
 
 <div class="socials">
 
 <a href="https://www.instagram.com/saliktahir.pk/"
-target="_blank" rel="noopener noreferrer"
-aria-label="Instagram">
+target="_blank" rel="noopener noreferrer" aria-label="Instagram">
 <i class="fa-brands fa-instagram"></i>
 </a>
 
 <a href="https://www.facebook.com/61584913797671"
-target="_blank" rel="noopener noreferrer"
-aria-label="Facebook">
+target="_blank" rel="noopener noreferrer" aria-label="Facebook">
 <i class="fa-brands fa-facebook"></i>
 </a>
 
 <a href="https://www.tiktok.com/@salikraju123"
-target="_blank" rel="noopener noreferrer"
-aria-label="TikTok">
+target="_blank" rel="noopener noreferrer" aria-label="TikTok">
 <i class="fa-brands fa-tiktok"></i>
 </a>
 
 </div>
 
 <p class="footer-copy">
-© <span id="year"></span> SALIK WEB. All Rights Reserved.
+© <span id="year"></span> SCRIPTBAKER. All Rights Reserved.
 </p>
 
 </div>
 </footer>
 
-<!-- JAVASCRIPT -->
-
 <script>
 
-const jobs = [
+const projects = [
 
 {
-title:"Frontend Web Developer",
-company:"Digital Studio",
+title:"Business Website",
+company:"Web Development",
 category:"Development",
-type:"Remote",
-salary:"Example: $300-$500",
+type:"HTML",
 icon:"fa-code",
-description:"Build responsive websites using HTML, CSS and JavaScript.",
+description:"Modern responsive business website development.",
 tags:["HTML","CSS","JavaScript"]
 },
 
 {
-title:"Graphic Designer",
-company:"Creative Agency",
+title:"Creative Branding",
+company:"Graphic Design",
 category:"Design",
-type:"Freelance",
-salary:"Example: $150-$250",
+type:"Design",
 icon:"fa-palette",
-description:"Create logos, banners and professional social media designs.",
-tags:["Photoshop","Figma","Branding"]
+description:"Professional branding, logos and visual identity.",
+tags:["Branding","Design","Creative"]
 },
 
 {
-title:"SEO Specialist",
-company:"Growth Media",
+title:"SEO Optimization",
+company:"Digital Marketing",
 category:"Marketing",
-type:"Part Time",
-salary:"Example: $200-$350",
+type:"AI",
 icon:"fa-chart-line",
-description:"Improve website search visibility and online performance.",
-tags:["SEO","Analytics","Research"]
+description:"Website optimization and digital growth strategies.",
+tags:["SEO","Marketing","Analytics"]
 },
 
 {
-title:"Content Writer",
-company:"Media House",
+title:"Content Solutions",
+company:"Content Writing",
 category:"Writing",
-type:"Remote",
-salary:"Example: $100-$200",
+type:"HTML",
 icon:"fa-pen-nib",
-description:"Write professional articles, blogs and website content.",
+description:"Professional content for websites and businesses.",
 tags:["Writing","Blogs","Editing"]
 },
 
 {
-title:"AI Automation Developer",
-company:"Future Labs",
+title:"AI Automation",
+company:"Artificial Intelligence",
 category:"AI",
-type:"Freelance",
-salary:"Example: $400-$700",
+type:"AI",
 icon:"fa-robot",
-description:"Create AI-powered solutions and automated workflows.",
+description:"AI-powered tools and intelligent workflow automation.",
 tags:["AI","Automation","APIs"]
 },
 
 {
-title:"Mobile App Developer",
-company:"AppWorks",
+title:"Mobile Application",
+company:"App Development",
 category:"Development",
-type:"Remote",
-salary:"Example: $500-$800",
+type:"JavaScript",
 icon:"fa-mobile-screen",
-description:"Build modern and user-friendly mobile applications.",
-tags:["Flutter","Android","Mobile"]
+description:"Modern mobile applications and user-friendly interfaces.",
+tags:["Mobile","Android","JavaScript"]
 }
 
 ];
@@ -1026,61 +932,58 @@ const search=searchInput.value.trim().toLowerCase();
 const category=categoryFilter.value;
 const type=typeFilter.value;
 
-const filtered=jobs.filter(job=>{
+const filtered=projects.filter(project=>{
 
 const text=[
-job.title,
-job.company,
-job.description,
-job.category,
-job.type,
-...job.tags
+project.title,
+project.company,
+project.description,
+project.category,
+project.type,
+...project.tags
 ].join(" ").toLowerCase();
 
 return text.includes(search)
-&&(!category||job.category===category)
-&&(!type||job.type===type);
+&&(!category||project.category===category)
+&&(!type||project.type===type);
 
 });
 
 if(!filtered.length){
-jobList.innerHTML=
-'<div class="empty">No matching sample jobs found. Try another search.</div>';
+jobList.innerHTML='<div class="empty">No matching projects found.</div>';
 return;
 }
 
-jobList.innerHTML=filtered.map(job=>`
+jobList.innerHTML=filtered.map(project=>`
 
 <article class="job-card">
 
 <div class="job-top">
 
 <div class="job-icon">
-<i class="fa-solid ${job.icon}"></i>
+<i class="fa-solid ${project.icon}"></i>
 </div>
 
 <div>
-<h3>${job.title}</h3>
-<small>${job.company} · ${job.category}</small>
+<h3>${project.title}</h3>
+<small>${project.company}</small>
 </div>
 
 </div>
 
-<p class="job-description">${job.description}</p>
+<p class="job-description">${project.description}</p>
 
 <div class="job-tags">
-${job.tags.map(tag=>`<span>${tag}</span>`).join("")}
+${project.tags.map(tag=>`<span>${tag}</span>`).join("")}
 </div>
 
 <div class="job-bottom">
-
 <div>
-<div class="salary">${job.salary}</div>
-<div class="job-type">${job.type} · Sample Listing</div>
+<div class="salary">SCRIPTBAKER</div>
+<div class="job-type">Digital Project</div>
 </div>
 
-<a href="#contact" class="apply">Learn More →</a>
-
+<a href="#contact" class="apply">Contact Us →</a>
 </div>
 
 </article>
@@ -1113,23 +1016,14 @@ menuBtn.innerHTML=open
 navLinks.querySelectorAll("a").forEach(link=>{
 
 link.addEventListener("click",()=>{
-
 navLinks.classList.remove("open");
-
 menuBtn.setAttribute("aria-expanded","false");
-
 menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
-
 });
 
 });
 
-/* CURRENT YEAR */
-
-document.getElementById("year").textContent=
-new Date().getFullYear();
-
-/* LOAD JOBS */
+document.getElementById("year").textContent=new Date().getFullYear();
 
 renderJobs();
 
