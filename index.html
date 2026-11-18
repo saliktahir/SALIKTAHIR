@@ -4,184 +4,693 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08121a">
-<meta name="description" content="Find jobs, freelancing and remote work with Salikweb.">
-<title>Salikweb | Find Jobs & Grow Online</title>
+<meta name="theme-color" content="#080d13">
+<meta name="description" content="SCRIPTBAKER - AI & Software Engineering. Discover jobs, freelancing and remote work with Salikweb.">
+<title>SCRIPTBAKER | Jobs, Freelancing & Remote Work</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root{
---bg:#08121a;
---card:#101f29;
---text:#f1f8f7;
---muted:#9aadb2;
---mint:#54e7bd;
---blue:#79a7ff;
---line:rgba(255,255,255,.1);
+:root {
+  --bg:#080d13;
+  --panel:#101b24;
+  --panel2:#142631;
+  --text:#f1f8f7;
+  --muted:#9aadb2;
+  --mint:#54e7bd;
+  --blue:#24a9e0;
+  --line:rgba(255,255,255,.10);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{
-font-family:'DM Sans',sans-serif;
-background:radial-gradient(ellipse at 80% 0%,rgba(42,126,112,.18),transparent 34%),radial-gradient(ellipse at 0% 40%,rgba(62,102,169,.13),transparent 35%),var(--bg);
-color:var(--text);line-height:1.65
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-a{text-decoration:none;color:inherit}
-button,input,select{font:inherit}
-.container{width:min(1160px,92%);margin:auto}
-header{
-position:sticky;top:0;z-index:100;
-background:rgba(8,18,26,.92);
-backdrop-filter:blur(18px);
-border-bottom:1px solid var(--line)
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
 }
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{font:700 28px 'Space Grotesk';letter-spacing:-1px}
-.logo span{color:var(--mint)}
-.nav-links{display:flex;gap:26px;color:var(--muted);font-size:14px}
-.nav-links a:hover{color:var(--mint)}
-.menu-btn{display:none;background:none;border:0;color:white;font-size:24px}
-.btn{
-display:inline-flex;align-items:center;justify-content:center;
-gap:9px;padding:13px 20px;border-radius:11px;
-font-weight:800;font-size:14px;transition:.2s;
-border:1px solid transparent
+
+body {
+  background:
+    radial-gradient(ellipse at 80% 0%,rgba(30,125,140,.16),transparent 35%),
+    var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.65;
 }
-.btn:hover{transform:translateY(-3px)}
-.primary{background:var(--mint);color:#061a16}
-.secondary{border-color:var(--line);color:white}
-.hero{padding:95px 0 70px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
-.tag{
-display:inline-block;padding:8px 15px;border-radius:30px;
-color:var(--mint);background:rgba(84,231,189,.08);
-border:1px solid rgba(84,231,189,.3);
-font-size:12px;font-weight:800;margin-bottom:23px
+
+a {
+  text-decoration:none;
+  color:inherit;
 }
-h1,h2,h3{font-family:'Space Grotesk',sans-serif}
-h1{font-size:clamp(43px,6.5vw,76px);line-height:1.08;letter-spacing:-2px;margin-bottom:22px}
-h1 span{color:var(--mint)}
-.hero p{color:var(--muted);max-width:600px;margin-bottom:28px}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-.visual{
-padding:25px;border:1px solid var(--line);border-radius:25px;
-background:linear-gradient(145deg,rgba(84,231,189,.12),rgba(121,167,255,.08)),var(--card)
+
+button,input,select {
+  font:inherit;
 }
-.visual h2{font-size:25px;margin:25px 0}
-.mini-job{
-display:flex;align-items:center;gap:13px;
-padding:13px;margin-top:10px;
-border:1px solid var(--line);border-radius:13px;
-background:rgba(7,18,26,.5)
+
+.container {
+  width:min(1160px,92%);
+  margin:auto;
 }
-.mini-icon{
-width:42px;height:42px;display:grid;place-items:center;
-border-radius:12px;background:rgba(84,231,189,.12);
-color:var(--mint)
+
+/* HEADER */
+
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(8,13,19,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
 }
-.mini-job strong{font-size:13px;display:block}
-.mini-job small{font-size:11px;color:var(--muted)}
-.mini-job em{margin-left:auto;color:var(--mint);font-size:10px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:55px}
-.stat{padding:20px;background:rgba(16,31,41,.85);border:1px solid var(--line);border-radius:15px}
-.stat strong{display:block;font:700 27px 'Space Grotesk';color:var(--mint)}
-.stat span{font-size:12px;color:var(--muted)}
-section{padding:80px 0}
-.heading{text-align:center;margin:0 auto 40px;max-width:650px}
-.heading small{color:var(--mint);letter-spacing:2px;font-weight:800}
-.heading h2{font-size:clamp(29px,4vw,43px);margin:8px 0}
-.heading p{font-size:14px;color:var(--muted)}
-.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.category{
-padding:24px 20px;border:1px solid var(--line);
-border-radius:17px;background:rgba(16,31,41,.85);
-transition:.2s
+
+.nav {
+  min-height:83px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
-.category:hover{transform:translateY(-5px);border-color:var(--mint)}
-.category i{
-font-size:25px;color:var(--mint);margin-bottom:16px
+
+.brand {
+  display:flex;
+  align-items:center;
+  min-width:0;
 }
-.category h3{font-size:16px;margin-bottom:7px}
-.category p{font-size:12px;color:var(--muted)}
-.jobs-section{background:rgba(11,26,35,.75);border-block:1px solid var(--line)}
-.controls{display:grid;grid-template-columns:1fr 220px 190px;gap:12px;margin-bottom:22px}
-.field{
-width:100%;padding:14px;border:1px solid var(--line);
-border-radius:10px;background:#10212b;color:white;outline:none
+
+.brand img {
+  display:block;
+  width:205px;
+  max-width:100%;
+  height:auto;
+  object-fit:contain;
 }
-.field:focus{border-color:var(--mint)}
-.field option{background:#10212b}
-.job-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.job{
-padding:22px;border:1px solid var(--line);
-border-radius:16px;background:var(--card)
+
+.nav-links {
+  display:flex;
+  gap:25px;
+  align-items:center;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
 }
-.job-top{display:flex;align-items:center;gap:13px}
-.job-icon{
-width:46px;height:46px;display:grid;place-items:center;
-border-radius:12px;background:rgba(121,167,255,.13);color:var(--blue)
+
+.nav-links a:hover {
+  color:var(--mint);
 }
-.job h3{font-size:16px}
-.job small{color:var(--muted);font-size:11px}
-.job p{color:var(--muted);font-size:13px;margin:16px 0}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:17px}
-.tags span{padding:5px 9px;background:rgba(84,231,189,.08);color:var(--mint);font-size:10px;border-radius:6px}
-.job-bottom{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between;gap:10px}
-.salary{color:var(--mint);font-size:13px;font-weight:800}
-.job-type{color:var(--muted);font-size:11px}
-.apply{color:var(--mint);font-size:12px;font-weight:800}
-.empty{grid-column:1/-1;text-align:center;padding:30px;color:var(--muted)}
-.notice{text-align:center;color:var(--muted);font-size:11px;margin-top:16px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.step{padding:27px;border:1px solid var(--line);border-radius:17px;background:var(--card)}
-.step-number{font:700 34px 'Space Grotesk';color:var(--mint)}
-.step h3{font-size:18px;margin:10px 0}
-.step p{font-size:13px;color:var(--muted)}
-.cta{
-padding:55px 25px;text-align:center;border-radius:23px;
-border:1px solid rgba(84,231,189,.25);
-background:linear-gradient(120deg,#102e30,#14283e)
+
+.nav-cta {
+  padding:10px 16px;
+  border:1px solid rgba(84,231,189,.4);
+  border-radius:10px;
+  color:var(--mint);
+  font-size:12px;
+  font-weight:800;
 }
-.cta h2{font-size:clamp(28px,4vw,39px);margin-bottom:12px}
-.cta p{color:#b6c9ca;margin:0 auto 24px;max-width:570px}
-footer{padding:30px 0;border-top:1px solid var(--line);background:#050d13}
-.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.footer-copy{font-size:12px;color:var(--muted)}
-.socials{display:flex;gap:18px;color:var(--muted);font-size:20px}
-.socials a:hover{color:var(--mint)}
-@media(max-width:900px){
-.hero-grid{grid-template-columns:1fr}
-.categories{grid-template-columns:repeat(2,1fr)}
-.stats{grid-template-columns:repeat(2,1fr)}
+
+.menu-btn {
+  display:none;
+  background:none;
+  color:white;
+  border:0;
+  font-size:24px;
+  cursor:pointer;
 }
-@media(max-width:680px){
-.nav{height:68px}
-.menu-btn{display:block}
-.nav-links{
-display:none;position:absolute;top:68px;left:0;right:0;
-padding:22px 5%;background:#0d1b25;
-border-bottom:1px solid var(--line);
-flex-direction:column;gap:18px
+
+/* BUTTONS */
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:13px 21px;
+  border-radius:11px;
+  font-weight:800;
+  font-size:13px;
+  transition:.2s;
+  border:1px solid transparent;
 }
-.nav-links.open{display:flex}
-.hero{padding:65px 0 50px}
-section{padding:60px 0}
-.controls{grid-template-columns:1fr}
-.job-list,.steps{grid-template-columns:1fr}
-.footer-row{flex-direction:column;text-align:center}
+
+.btn:hover {
+  transform:translateY(-3px);
 }
-@media(max-width:390px){.categories{grid-template-columns:1fr}}
+
+.primary {
+  background:var(--mint);
+  color:#071b16;
+}
+
+.secondary {
+  border-color:var(--line);
+  background:rgba(255,255,255,.03);
+  color:white;
+}
+
+/* HERO */
+
+.hero {
+  padding:95px 0 70px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:45px;
+  align-items:center;
+}
+
+.eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 15px;
+  border:1px solid rgba(84,231,189,.3);
+  background:rgba(84,231,189,.08);
+  border-radius:30px;
+  color:var(--mint);
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:22px;
+}
+
+h1,h2,h3 {
+  font-family:'Space Grotesk',sans-serif;
+}
+
+h1 {
+  font-size:clamp(43px,6.5vw,76px);
+  line-height:1.08;
+  letter-spacing:-2.5px;
+  margin-bottom:22px;
+}
+
+h1 span {
+  color:var(--mint);
+}
+
+.hero-description {
+  max-width:610px;
+  color:var(--muted);
+  font-size:15px;
+  margin-bottom:28px;
+}
+
+.hero-buttons {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* HERO VISUAL */
+
+.visual {
+  padding:25px;
+  border:1px solid var(--line);
+  border-radius:25px;
+  background:
+    linear-gradient(145deg,rgba(84,231,189,.12),rgba(36,169,224,.08)),
+    var(--panel);
+  box-shadow:0 25px 70px rgba(0,0,0,.2);
+}
+
+.visual-top {
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:800;
+}
+
+.visual-title {
+  font:700 26px 'Space Grotesk';
+  margin:30px 0 20px;
+}
+
+.mini-job {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px;
+  margin-top:10px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:rgba(7,18,26,.55);
+}
+
+.mini-icon {
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:rgba(84,231,189,.12);
+  color:var(--mint);
+}
+
+.mini-job strong {
+  display:block;
+  font-size:13px;
+}
+
+.mini-job small {
+  color:var(--muted);
+  font-size:11px;
+}
+
+.mini-job em {
+  margin-left:auto;
+  color:var(--mint);
+  font-size:10px;
+}
+
+/* STATS */
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:55px;
+}
+
+.stat {
+  padding:20px;
+  background:rgba(16,27,36,.9);
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+.stat strong {
+  display:block;
+  font:700 27px 'Space Grotesk';
+  color:var(--mint);
+}
+
+.stat span {
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding:80px 0;
+}
+
+.section-heading {
+  text-align:center;
+  max-width:650px;
+  margin:0 auto 40px;
+}
+
+.section-heading small {
+  color:var(--mint);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.section-heading h2 {
+  font-size:clamp(29px,4vw,43px);
+  margin:8px 0;
+}
+
+.section-heading p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* CATEGORIES */
+
+.category-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.category {
+  padding:24px 20px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:var(--panel);
+  transition:.2s;
+}
+
+.category:hover {
+  transform:translateY(-5px);
+  border-color:var(--mint);
+  background:var(--panel2);
+}
+
+.category-icon {
+  width:47px;
+  height:47px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  background:rgba(84,231,189,.1);
+  color:var(--mint);
+  font-size:21px;
+  margin-bottom:15px;
+}
+
+.category h3 {
+  font-size:16px;
+  margin-bottom:7px;
+}
+
+.category p {
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* JOBS */
+
+.jobs-section {
+  background:rgba(11,26,35,.75);
+  border-block:1px solid var(--line);
+}
+
+.controls {
+  display:grid;
+  grid-template-columns:1fr 220px 190px;
+  gap:12px;
+  margin-bottom:22px;
+}
+
+.field {
+  width:100%;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#10212b;
+  color:white;
+  outline:none;
+}
+
+.field:focus {
+  border-color:var(--mint);
+}
+
+.field option {
+  background:#10212b;
+}
+
+.job-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.job-card {
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--panel);
+  transition:.2s;
+}
+
+.job-card:hover {
+  border-color:rgba(84,231,189,.5);
+  transform:translateY(-3px);
+}
+
+.job-top {
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.job-icon {
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:rgba(36,169,224,.12);
+  color:var(--blue);
+}
+
+.job-top h3 {
+  font-size:16px;
+}
+
+.job-top small {
+  color:var(--muted);
+  font-size:11px;
+}
+
+.job-description {
+  color:var(--muted);
+  font-size:13px;
+  margin:16px 0;
+}
+
+.job-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-bottom:17px;
+}
+
+.job-tags span {
+  padding:5px 9px;
+  border-radius:6px;
+  background:rgba(84,231,189,.08);
+  color:var(--mint);
+  font-size:10px;
+}
+
+.job-bottom {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  border-top:1px solid var(--line);
+  padding-top:14px;
+}
+
+.salary {
+  color:var(--mint);
+  font-size:13px;
+  font-weight:800;
+}
+
+.job-type {
+  color:var(--muted);
+  font-size:11px;
+}
+
+.apply {
+  color:var(--mint);
+  font-size:12px;
+  font-weight:800;
+}
+
+.empty {
+  grid-column:1/-1;
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+}
+
+.notice {
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+  margin-top:16px;
+}
+
+/* HOW IT WORKS */
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.step {
+  padding:27px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:var(--panel);
+}
+
+.step-number {
+  font:700 34px 'Space Grotesk';
+  color:var(--mint);
+}
+
+.step h3 {
+  font-size:18px;
+  margin:10px 0;
+}
+
+.step p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* CONTACT */
+
+.cta {
+  padding:55px 25px;
+  text-align:center;
+  border-radius:23px;
+  border:1px solid rgba(84,231,189,.25);
+  background:linear-gradient(120deg,#102e30,#14283e);
+}
+
+.cta h2 {
+  font-size:clamp(28px,4vw,39px);
+  margin-bottom:12px;
+}
+
+.cta p {
+  color:#b6c9ca;
+  margin:0 auto 24px;
+  max-width:570px;
+}
+
+/* FOOTER */
+
+footer {
+  padding:30px 0;
+  border-top:1px solid var(--line);
+  background:#05090e;
+}
+
+.footer-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-logo img {
+  width:190px;
+  height:auto;
+  display:block;
+}
+
+.footer-copy {
+  color:var(--muted);
+  font-size:12px;
+}
+
+.socials {
+  display:flex;
+  gap:18px;
+  color:var(--muted);
+  font-size:20px;
+}
+
+.socials a:hover {
+  color:var(--mint);
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+  .hero-grid {
+    grid-template-columns:1fr;
+  }
+
+  .category-grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stats {
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:680px) {
+  .nav {
+    min-height:70px;
+  }
+
+  .brand img {
+    width:175px;
+  }
+
+  .menu-btn {
+    display:block;
+  }
+
+  .nav-cta {
+    display:none;
+  }
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    right:0;
+    padding:22px 5%;
+    background:#0d1b25;
+    border-bottom:1px solid var(--line);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+  }
+
+  .nav-links.open {
+    display:flex;
+  }
+
+  .hero {
+    padding:65px 0 50px;
+  }
+
+  section {
+    padding:60px 0;
+  }
+
+  .controls {
+    grid-template-columns:1fr;
+  }
+
+  .job-grid,
+  .steps {
+    grid-template-columns:1fr;
+  }
+
+  .footer-row {
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+@media(max-width:390px) {
+  .category-grid {
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<!-- HEADER WITH SCRIPTBAKER LOGO -->
+
 <header>
 <div class="container nav">
-<a href="#home" class="logo">salik<span>web.</span></a>
+
+<a href="#home" class="brand">
+<img src="scriptbaker-logo.png"
+alt="SCRIPTBAKER - AI & Software Engineering">
+</a>
+
 <nav class="nav-links" id="navLinks">
 <a href="#home">Home</a>
 <a href="#categories">Categories</a>
@@ -189,101 +698,192 @@ section{padding:60px 0}
 <a href="#how">How It Works</a>
 <a href="#contact">Contact</a>
 </nav>
-<button class="menu-btn" id="menuBtn" aria-label="Open menu">
+
+<a href="#jobs" class="nav-cta">Find Opportunities</a>
+
+<button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
 <i class="fa-solid fa-bars"></i>
 </button>
+
 </div>
 </header>
 
 <main>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
 <div class="container">
+
 <div class="hero-grid">
+
 <div>
-<div class="tag">
+
+<div class="eyebrow">
 <i class="fa-solid fa-circle-check"></i>
 Find Jobs • Freelancing • Remote Work
 </div>
+
 <h1>
 Find Work.<br>
 Build Skills.<br>
 <span>Grow Online.</span>
 </h1>
-<p>
-Welcome to Salikweb. Discover online job opportunities,
-freelancing projects and digital careers.
-Build your skills and create your professional future.
+
+<p class="hero-description">
+Welcome to SCRIPTBAKER. Discover online job opportunities,
+freelancing projects and remote careers.
+Explore digital skills and build your professional future
+with Salikweb.
 </p>
+
 <div class="hero-buttons">
-<a href="#jobs" class="btn primary">Explore Jobs <i class="fa-solid fa-arrow-right"></i></a>
-<a href="#contact" class="btn secondary">Contact Us</a>
+<a href="#jobs" class="btn primary">
+Explore Jobs <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="#categories" class="btn secondary">
+Explore Categories
+</a>
 </div>
+
 </div>
 
 <div class="visual">
-<div style="color:var(--mint);font-size:12px">
-<i class="fa-solid fa-circle"></i> YOUR DIGITAL CAREER
+
+<div class="visual-top">
+<span><i class="fa-solid fa-circle" style="color:var(--mint)"></i> SCRIPTBAKER CAREER</span>
+<span>01 / 04</span>
 </div>
-<h2>Opportunities start with one skill.</h2>
+
+<div class="visual-title">
+Opportunities start<br>with one skill.
+</div>
+
 <div class="mini-job">
 <div class="mini-icon"><i class="fa-solid fa-code"></i></div>
-<div><strong>Web Development</strong><small>Websites and programming</small></div>
+<div>
+<strong>Web Development</strong>
+<small>Websites and programming</small>
+</div>
 <em>01</em>
 </div>
+
 <div class="mini-job">
 <div class="mini-icon"><i class="fa-solid fa-robot"></i></div>
-<div><strong>AI & Automation</strong><small>Smart digital solutions</small></div>
+<div>
+<strong>AI & Automation</strong>
+<small>Smart digital solutions</small>
+</div>
 <em>02</em>
 </div>
+
 <div class="mini-job">
 <div class="mini-icon"><i class="fa-solid fa-pen-nib"></i></div>
-<div><strong>Creative Services</strong><small>Design and content</small></div>
+<div>
+<strong>Creative Services</strong>
+<small>Design and content</small>
+</div>
 <em>03</em>
 </div>
+
 </div>
 </div>
 
 <div class="stats">
 <div class="stat"><strong>08+</strong><span>Job Categories</span></div>
-<div class="stat"><strong>24/7</strong><span>Online Access</span></div>
+<div class="stat"><strong>24/7</strong><span>Website Access</span></div>
 <div class="stat"><strong>100%</strong><span>Responsive Design</span></div>
-<div class="stat"><strong>Global</strong><span>Remote Opportunities</span></div>
+<div class="stat"><strong>Global</strong><span>Remote Work Focus</span></div>
 </div>
+
 </div>
 </section>
+
+<!-- CATEGORIES -->
 
 <section id="categories">
 <div class="container">
-<div class="heading">
+
+<div class="section-heading">
 <small>EXPLORE YOUR SKILLS</small>
 <h2>Explore Job Categories</h2>
-<p>Discover opportunities matching your skills and interests.</p>
+<p>Discover digital skills and explore different career opportunities.</p>
 </div>
 
-<div class="categories">
-<div class="category"><i class="fa-solid fa-code"></i><h3>Web Development</h3><p>Websites, apps and programming.</p></div>
-<div class="category"><i class="fa-solid fa-pen-nib"></i><h3>Content Writing</h3><p>Articles, blogs and copywriting.</p></div>
-<div class="category"><i class="fa-solid fa-palette"></i><h3>Graphic Design</h3><p>Logos, branding and designs.</p></div>
-<div class="category"><i class="fa-solid fa-bullhorn"></i><h3>Digital Marketing</h3><p>Social media and marketing.</p></div>
-<div class="category"><i class="fa-solid fa-chart-line"></i><h3>SEO Services</h3><p>Search optimization and growth.</p></div>
-<div class="category"><i class="fa-solid fa-robot"></i><h3>AI Services</h3><p>AI tools and automation.</p></div>
-<div class="category"><i class="fa-solid fa-video"></i><h3>Video Editing</h3><p>Video production and editing.</p></div>
-<div class="category"><i class="fa-solid fa-mobile-screen"></i><h3>App Development</h3><p>Android and mobile applications.</p></div>
+<div class="category-grid">
+
+<div class="category">
+<div class="category-icon"><i class="fa-solid fa-code"></i></div>
+<h3>Web Development</h3>
+<p>Websites, applications and programming.</p>
+</div>
+
+<div class="category">
+<div class="category-icon"><i class="fa-solid fa-pen-nib"></i></div>
+<h3>Content Writing</h3>
+<p>Articles, blogs and website content.</p>
+</div>
+
+<div class="category">
+<div class="category-icon"><i class="fa-solid fa-palette"></i></div>
+<h3>Graphic Design</h3>
+<p>Logos, branding and creative visuals.</p>
+</div>
+
+<div class="category">
+<div class="category-icon"><i class="fa-solid fa-bullhorn"></i></div>
+<h3>Digital Marketing</h3>
+<p>Social media and online marketing.</p>
+</div>
+
+<div class="category">
+<div class="category-icon"><i class="fa-solid fa-chart-line"></i></div>
+<h3>SEO Services</h3>
+<p>Search engine optimization.</p>
+</div>
+
+<div class="category">
+<div class="category-icon"><i class="fa-solid fa-robot"></i></div>
+<h3>AI Services</h3>
+<p>AI tools and smart automation.</p>
+</div>
+
+<div class="category">
+<div class="category-icon"><i class="fa-solid fa-video"></i></div>
+<h3>Video Editing</h3>
+<p>Video production and editing.</p>
+</div>
+
+<div class="category">
+<div class="category-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+<h3>App Development</h3>
+<p>Android and mobile applications.</p>
+</div>
+
 </div>
 </div>
 </section>
 
+<!-- JOBS -->
+
 <section class="jobs-section" id="jobs">
 <div class="container">
-<div class="heading">
+
+<div class="section-heading">
 <small>YOUR NEXT OPPORTUNITY</small>
 <h2>Find Your Next Opportunity</h2>
 <p>Search and filter example job listings.</p>
 </div>
 
 <div class="controls">
-<input class="field" type="search" id="searchInput" placeholder="Search jobs or skills...">
+
+<input class="field"
+type="search"
+id="searchInput"
+placeholder="Search jobs or skills..."
+aria-label="Search jobs">
+
 <select class="field" id="categoryFilter">
 <option value="">All Categories</option>
 <option value="Development">Development</option>
@@ -292,131 +892,320 @@ Build your skills and create your professional future.
 <option value="Marketing">Marketing</option>
 <option value="AI">AI</option>
 </select>
+
 <select class="field" id="typeFilter">
 <option value="">All Job Types</option>
 <option value="Remote">Remote</option>
 <option value="Freelance">Freelance</option>
 <option value="Part Time">Part Time</option>
 </select>
+
 </div>
 
-<div class="job-list" id="jobList"></div>
-<p class="notice">These are sample listings, not verified live vacancies. Verify employers before applying.</p>
+<div class="job-grid" id="jobList"></div>
+
+<p class="notice">
+These are demonstration listings, not verified live vacancies.
+Always verify employers before applying.
+</p>
+
 </div>
 </section>
+
+<!-- HOW IT WORKS -->
 
 <section id="how">
 <div class="container">
-<div class="heading">
+
+<div class="section-heading">
 <small>START YOUR JOURNEY</small>
-<h2>How Salikweb Works</h2>
-<p>Start exploring opportunities in three simple steps.</p>
+<h2>How SCRIPTBAKER Works</h2>
+<p>Start exploring online career opportunities in three simple steps.</p>
 </div>
+
 <div class="steps">
-<div class="step"><div class="step-number">01</div><h3>Explore Opportunities</h3><p>Discover different jobs and professional opportunities.</p></div>
-<div class="step"><div class="step-number">02</div><h3>Build Your Skills</h3><p>Improve your knowledge and prepare for projects.</p></div>
-<div class="step"><div class="step-number">03</div><h3>Apply & Grow</h3><p>Connect with clients and develop your career.</p></div>
+
+<div class="step">
+<div class="step-number">01</div>
+<h3>Explore Opportunities</h3>
+<p>Discover digital jobs, freelancing and remote work categories.</p>
+</div>
+
+<div class="step">
+<div class="step-number">02</div>
+<h3>Build Your Skills</h3>
+<p>Improve your knowledge and create professional projects.</p>
+</div>
+
+<div class="step">
+<div class="step-number">03</div>
+<h3>Apply & Grow</h3>
+<p>Prepare your portfolio and connect with potential clients.</p>
+</div>
+
 </div>
 </div>
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact">
 <div class="container">
+
 <div class="cta">
-<h2>Build Your Future with Salikweb</h2>
-<p>Have a question? Connect with Salik Tahir on Instagram.</p>
-<a class="btn primary" href="https://www.instagram.com/saliktahir.pk/" target="_blank" rel="noopener noreferrer">
+
+<h2>Build Your Future with SCRIPTBAKER</h2>
+
+<p>
+Have a question or want to connect?
+Contact Salik Tahir and explore our digital world.
+</p>
+
+<a class="btn primary"
+href="https://www.instagram.com/saliktahir.pk/"
+target="_blank"
+rel="noopener noreferrer">
 Contact Us <i class="fa-brands fa-instagram"></i>
 </a>
+
 </div>
 </div>
 </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
 <div class="container footer-row">
-<div>
-<a href="#home" class="logo">salik<span>web.</span></a>
-<p class="footer-copy">Find opportunities. Build your future.</p>
+
+<div class="footer-logo">
+<a href="#home">
+<img src="scriptbaker-logo.png"
+alt="SCRIPTBAKER AI and Software Engineering">
+</a>
+<p class="footer-copy">Technology & Digital Services</p>
 </div>
+
 <div class="socials">
-<a href="https://www.instagram.com/saliktahir.pk/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-<a href="https://www.facebook.com/61584913797671" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
-<a href="https://www.tiktok.com/@salikraju123" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+
+<a href="https://www.instagram.com/saliktahir.pk/"
+target="_blank" rel="noopener noreferrer"
+aria-label="Instagram">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://www.facebook.com/61584913797671"
+target="_blank" rel="noopener noreferrer"
+aria-label="Facebook">
+<i class="fa-brands fa-facebook"></i>
+</a>
+
+<a href="https://www.tiktok.com/@salikraju123"
+target="_blank" rel="noopener noreferrer"
+aria-label="TikTok">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+
 </div>
-<p class="footer-copy">© <span id="year"></span> Salikweb. All rights reserved.</p>
+
+<p class="footer-copy">
+© <span id="year"></span> SCRIPTBAKER. All Rights Reserved.
+</p>
+
 </div>
 </footer>
 
+<!-- JAVASCRIPT -->
+
 <script>
-const jobs=[
-{title:"Frontend Web Developer",company:"Digital Studio",category:"Development",type:"Remote",salary:"Example: $300-$500",icon:"fa-code",description:"Build responsive websites using HTML, CSS and JavaScript.",tags:["HTML","CSS","JavaScript"]},
-{title:"Graphic Designer",company:"Creative Agency",category:"Design",type:"Freelance",salary:"Example: $150-$250",icon:"fa-palette",description:"Create modern logos, banners and social media designs.",tags:["Photoshop","Figma","Branding"]},
-{title:"SEO Specialist",company:"Growth Media",category:"Marketing",type:"Part Time",salary:"Example: $200-$350",icon:"fa-chart-line",description:"Improve website visibility and search performance.",tags:["SEO","Analytics","Research"]},
-{title:"Content Writer",company:"Media House",category:"Writing",type:"Remote",salary:"Example: $100-$200",icon:"fa-pen-nib",description:"Write articles, website content and blogs.",tags:["Writing","Blogs","Research"]},
-{title:"AI Automation Developer",company:"Future Labs",category:"AI",type:"Freelance",salary:"Example: $400-$700",icon:"fa-robot",description:"Create AI-powered solutions and automation workflows.",tags:["AI","Automation","APIs"]},
-{title:"Mobile App Developer",company:"AppWorks",category:"Development",type:"Remote",salary:"Example: $500-$800",icon:"fa-mobile-screen",description:"Develop modern and user-friendly mobile applications.",tags:["Flutter","Android","Mobile"]}
+
+const jobs = [
+
+{
+title:"Frontend Web Developer",
+company:"Digital Studio",
+category:"Development",
+type:"Remote",
+salary:"Example: $300-$500",
+icon:"fa-code",
+description:"Build responsive websites using HTML, CSS and JavaScript.",
+tags:["HTML","CSS","JavaScript"]
+},
+
+{
+title:"Graphic Designer",
+company:"Creative Agency",
+category:"Design",
+type:"Freelance",
+salary:"Example: $150-$250",
+icon:"fa-palette",
+description:"Create logos, banners and professional social media designs.",
+tags:["Photoshop","Figma","Branding"]
+},
+
+{
+title:"SEO Specialist",
+company:"Growth Media",
+category:"Marketing",
+type:"Part Time",
+salary:"Example: $200-$350",
+icon:"fa-chart-line",
+description:"Improve website search visibility and online performance.",
+tags:["SEO","Analytics","Research"]
+},
+
+{
+title:"Content Writer",
+company:"Media House",
+category:"Writing",
+type:"Remote",
+salary:"Example: $100-$200",
+icon:"fa-pen-nib",
+description:"Write professional articles, blogs and website content.",
+tags:["Writing","Blogs","Editing"]
+},
+
+{
+title:"AI Automation Developer",
+company:"Future Labs",
+category:"AI",
+type:"Freelance",
+salary:"Example: $400-$700",
+icon:"fa-robot",
+description:"Create AI-powered solutions and automated workflows.",
+tags:["AI","Automation","APIs"]
+},
+
+{
+title:"Mobile App Developer",
+company:"AppWorks",
+category:"Development",
+type:"Remote",
+salary:"Example: $500-$800",
+icon:"fa-mobile-screen",
+description:"Build modern and user-friendly mobile applications.",
+tags:["Flutter","Android","Mobile"]
+}
+
 ];
 
-const jobList=document.getElementById("jobList");
-const searchInput=document.getElementById("searchInput");
-const categoryFilter=document.getElementById("categoryFilter");
-const typeFilter=document.getElementById("typeFilter");
+const jobList = document.getElementById("jobList");
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const typeFilter = document.getElementById("typeFilter");
 
-function renderJobs(){
-const search=searchInput.value.trim().toLowerCase();
-const category=categoryFilter.value;
-const type=typeFilter.value;
+function renderJobs() {
 
-const filtered=jobs.filter(job=>{
-const text=[job.title,job.company,job.description,job.category,job.type,...job.tags].join(" ").toLowerCase();
-return text.includes(search)&&(!category||job.category===category)&&(!type||job.type===type);
+const search = searchInput.value.trim().toLowerCase();
+const category = categoryFilter.value;
+const type = typeFilter.value;
+
+const filtered = jobs.filter(job => {
+
+const text = [
+job.title,
+job.company,
+job.description,
+job.category,
+job.type,
+...job.tags
+].join(" ").toLowerCase();
+
+return text.includes(search)
+&& (!category || job.category === category)
+&& (!type || job.type === type);
+
 });
 
-if(!filtered.length){
-jobList.innerHTML='<div class="empty">No matching sample jobs found. Try another search.</div>';
+if (!filtered.length) {
+jobList.innerHTML =
+'<div class="empty">No matching sample jobs found. Try another search.</div>';
 return;
 }
 
-jobList.innerHTML=filtered.map(job=>`
-<div class="job">
+jobList.innerHTML = filtered.map(job => `
+
+<article class="job-card">
+
 <div class="job-top">
-<div class="job-icon"><i class="fa-solid ${job.icon}"></i></div>
-<div><h3>${job.title}</h3><small>${job.company} · ${job.category}</small></div>
+<div class="job-icon">
+<i class="fa-solid ${job.icon}"></i>
 </div>
-<p>${job.description}</p>
-<div class="tags">${job.tags.map(tag=>`<span>${tag}</span>`).join("")}</div>
+
+<div>
+<h3>${job.title}</h3>
+<small>${job.company} · ${job.category}</small>
+</div>
+</div>
+
+<p class="job-description">${job.description}</p>
+
+<div class="job-tags">
+${job.tags.map(tag => `<span>${tag}</span>`).join("")}
+</div>
+
 <div class="job-bottom">
-<div><div class="salary">${job.salary}</div><div class="job-type">${job.type} · Sample listing</div></div>
-<a href="#contact" class="apply">Learn More →</a>
+
+<div>
+<div class="salary">${job.salary}</div>
+<div class="job-type">${job.type} · Sample Listing</div>
 </div>
-</div>`).join("");
+
+<a href="#contact" class="apply">Learn More →</a>
+
+</div>
+
+</article>
+
+`).join("");
+
 }
 
 searchInput.addEventListener("input",renderJobs);
 categoryFilter.addEventListener("change",renderJobs);
 typeFilter.addEventListener("change",renderJobs);
 
-const menuBtn=document.getElementById("menuBtn");
-const navLinks=document.getElementById("navLinks");
+// MOBILE MENU
 
-menuBtn.addEventListener("click",()=>{
-const open=navLinks.classList.toggle("open");
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+const open = navLinks.classList.toggle("open");
+
 menuBtn.setAttribute("aria-expanded",String(open));
-menuBtn.innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';
+
+menuBtn.innerHTML = open
+? '<i class="fa-solid fa-xmark"></i>'
+: '<i class="fa-solid fa-bars"></i>';
+
 });
 
-navLinks.querySelectorAll("a").forEach(link=>{
-link.addEventListener("click",()=>{
+navLinks.querySelectorAll("a").forEach(link => {
+
+link.addEventListener("click",() => {
+
 navLinks.classList.remove("open");
+
 menuBtn.setAttribute("aria-expanded","false");
-menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
-});
+
+menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
 });
 
-document.getElementById("year").textContent=new Date().getFullYear();
+});
+
+// CURRENT YEAR
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+// LOAD JOBS
+
 renderJobs();
+
 </script>
 
 </body>
